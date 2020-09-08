@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Xml.Serialization;
 
 namespace CSharpImpl
 {
@@ -68,8 +70,10 @@ namespace CSharpImpl
                     }
                 }
 
+                // fill the certain cells first
                 while (counts.Any(c => c > 0) && FillCertainCells() > 0) ;
 
+                // back-tracking the uncertain cells
                 FillUncertainCells();
 
                 DebugHelper.Print(board);
@@ -185,6 +189,68 @@ namespace CSharpImpl
                     }
                 }
                 return result;
+            }
+        }
+
+
+        public class Solution2
+        {
+            int Len = 9, Sqrt = 3, Total = 9 * 9;
+
+            // back-tracking
+            public void SolveSudoku(char[][] board)
+            {
+                Len = board.Length;
+                Sqrt = (int)Math.Sqrt(Len);
+                Total = Len * Len;
+
+                if (!FillCell(board, 0))
+                    throw new ApplicationException("Could not find any solution!");
+            }
+
+            private bool FillCell(char[][] board, int i)
+            {
+                if (i == Total)
+                {
+                    return true;
+                }
+
+                var r = i / Len;
+                var c = i % Len;
+                if (board[r][c] == '.')
+                {
+                    for (int k = 0; k < 9; k++)
+                    {
+                        var v = (char)('1' + k);
+                        if (IsOk(board, r, c, v))
+                        {
+                            board[r][c] = v;
+                            if (FillCell(board, i + 1))
+                                return true;
+                            else
+                                board[r][c] = '.';
+                        }
+                    }
+                    return false;
+                }
+                else
+                {
+                    return FillCell(board, i + 1);
+                }
+            }
+
+            private bool IsOk(char[][] board, int r, int c, char v)
+            {
+                var g_r = r / Sqrt * Sqrt;
+                var g_c = c / Sqrt * Sqrt;
+                for (int i = 0; i < Len; i++)
+                {
+                    if (board[r][i] == v || board[i][c] == v || board[g_r + i / Sqrt][g_c + i % Sqrt] == v)
+                    {
+                        return false;
+                    }
+                }
+                return true;
             }
         }
     }
