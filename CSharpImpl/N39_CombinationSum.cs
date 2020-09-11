@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSharpImpl
 {
@@ -38,6 +39,10 @@ namespace CSharpImpl
         // Each element of candidate is unique.
         // 1 <= target <= 500
 
+
+        /// <summary>
+        /// Back-tracking - Predetermine the length scope of possible solutions
+        /// </summary>
         public class Solution1
         {
             public IList<IList<int>> CombinationSum(int[] candidates, int target)
@@ -59,6 +64,10 @@ namespace CSharpImpl
 
             private IEnumerable<List<int>> FindNth(int[] candidates, int target, int index, int n)
             {
+                if (target < 0)
+                {
+                    yield break;
+                }
                 if (n == 1)
                 {
                     if (Array.IndexOf(candidates, target) >= index)
@@ -71,6 +80,41 @@ namespace CSharpImpl
                     for (int i = index; i < candidates.Length; i++)
                     {
                         foreach (var ret in FindNth(candidates, target - candidates[i], i, n - 1))
+                        {
+                            ret.Insert(0, candidates[i]);
+                            yield return ret;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Pure Back-tracking
+        /// </summary>
+        public class Solution2
+        {
+            public IList<IList<int>> CombinationSum(int[] candidates, int target)
+            {
+                return FindAll(candidates, target, 0).ToList();
+            }
+
+            private IEnumerable<IList<int>> FindAll(int[] candidates, int target, int index)
+            {
+                if (target < 0)
+                {
+                    yield break;
+                }
+                if (target == 0)
+                {
+                    yield return new List<int>();
+                }
+                else
+                {
+                    for (int i = index; i < candidates.Length; i++)
+                    {
+                        foreach (var ret in FindAll(candidates, target - candidates[i], i))
                         {
                             ret.Insert(0, candidates[i]);
                             yield return ret;
