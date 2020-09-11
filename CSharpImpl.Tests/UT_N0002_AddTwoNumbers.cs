@@ -17,7 +17,7 @@ namespace CSharpImpl.Tests
                 head.next = new ListNode(num);
                 head = head.next;
             }
-            return head.next;
+            return result.next;
         }
 
         static IEnumerable<int> GetListNodeValue(ListNode listNode)
@@ -29,15 +29,23 @@ namespace CSharpImpl.Tests
             }
         }
 
-        static object[] TestCases =
+        static object[] TestCases1 =
         {
-            new object[]{ CreateListNode(new int[] { 2, 4, 3 }), CreateListNode(new int[] { 5, 6, 4 }), CreateListNode(new int[] { 7, 0, 8 })},
-            new object[]{ CreateListNode(new int[] { 1 }), CreateListNode(new int[] { 9, 9, 9}), CreateListNode(new int[] { 0, 0, 0, 1 })},
             new object[]{ CreateListNode(new int[] { }), CreateListNode(new int[] { 9, 9, 9}), CreateListNode(new int[] { 9, 9, 9 })},
             new object[]{ CreateListNode(new int[] { 0 }), CreateListNode(new int[] { 9, 9, 9}), CreateListNode(new int[] { 9, 9, 9 })},
+            new object[]{ CreateListNode(new int[] { 2, 4, 3 }), CreateListNode(new int[] { 5, 6, 4 }), CreateListNode(new int[] { 7, 0, 8 })},
+            new object[]{ CreateListNode(new int[] { 1 }), CreateListNode(new int[] { 9, 9, 9}), CreateListNode(new int[] { 0, 0, 0, 1 })},
         };
 
-        [TestCaseSource(nameof(TestCases))]
+        static object[] TestCases2 =
+        {
+            new object[]{ CreateListNode(new int[] { }), CreateListNode(new int[] { 9, 9, 9}), CreateListNode(new int[] { 9, 9, 9 })},
+            new object[]{ CreateListNode(new int[] { 0 }), CreateListNode(new int[] { 9, 9, 9}), CreateListNode(new int[] { 9, 9, 9 })},
+            new object[]{ CreateListNode(new int[] { 2, 4, 3 }), CreateListNode(new int[] { 5, 6, 4 }), CreateListNode(new int[] { 7, 0, 8 })},
+            new object[]{ CreateListNode(new int[] { 1 }), CreateListNode(new int[] { 9, 9, 9}), CreateListNode(new int[] { 0, 0, 0, 1 })},
+        };
+
+        [TestCaseSource(nameof(TestCases1))]
         public void Solution1(ListNode l1, ListNode l2, ListNode ans)
         {
             var so = new N0002_AddTwoNumbers.Solution1();
@@ -46,7 +54,7 @@ namespace CSharpImpl.Tests
         }
 
 
-        [TestCaseSource(nameof(TestCases))]
+        [TestCaseSource(nameof(TestCases2))]
         public void Solution2(ListNode l1, ListNode l2, ListNode ans)
         {
             var so = new N0002_AddTwoNumbers.Solution2();

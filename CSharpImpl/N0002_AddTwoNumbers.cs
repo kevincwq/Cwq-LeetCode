@@ -75,7 +75,7 @@ namespace CSharpImpl
                 var op1 = l1;
                 var op2 = l2;
                 int carry = 0;
-                while (op1 != null || l2 != null)
+                while (op1 != null || op2 != null)
                 {
                     var sum = (op1 == null ? 0 : op1.val) + (op2 == null ? 0 : op2.val) + carry;
                     temp.next = new ListNode(sum % 10);
