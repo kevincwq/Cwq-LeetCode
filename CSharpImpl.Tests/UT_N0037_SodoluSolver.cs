@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace CSharpImpl.Tests
 {
-    public class UT_N37_SodoluSolver
+    public class UT_N0037_SodoluSolver
     {
         static readonly object[] S1_TestCases1 =
         {
@@ -91,7 +91,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(S1_TestCases1))]
         public void Solution1_1(char[][] board, char[][] ans)
         {
-            var so = new N37_SodokuSolver.Solution1();
+            var so = new N0037_SodokuSolver.Solution1();
             so.SolveSudoku(board);
             Assert.IsTrue(TestHelper.AreEqual(board, ans));
         }
@@ -99,7 +99,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(S1_TestCases2))]
         public void Solution1_2(char[][] board, char[][] ans)
         {
-            var so = new N37_SodokuSolver.Solution1();
+            var so = new N0037_SodokuSolver.Solution1();
             so.SolveSudoku(board);
             Assert.IsTrue(TestHelper.AreEqual(board, ans));
         }
@@ -107,7 +107,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(S1_TestCases3))]
         public void Solution1_3(char[][] board, char[][] ans)
         {
-            var so = new N37_SodokuSolver.Solution1();
+            var so = new N0037_SodokuSolver.Solution1();
             so.SolveSudoku(board);
             Assert.IsTrue(TestHelper.AreEqual(board, ans));
         }
@@ -200,7 +200,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(S2_TestCases1))]
         public void Solution2_1(char[][] board, char[][] ans)
         {
-            var so = new N37_SodokuSolver.Solution2();
+            var so = new N0037_SodokuSolver.Solution2();
             so.SolveSudoku(board);
             Assert.IsTrue(TestHelper.AreEqual(board, ans));
         }
@@ -208,7 +208,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(S2_TestCases2))]
         public void Solution2_2(char[][] board, char[][] ans)
         {
-            var so = new N37_SodokuSolver.Solution2();
+            var so = new N0037_SodokuSolver.Solution2();
             so.SolveSudoku(board);
             Assert.IsTrue(TestHelper.AreEqual(board, ans));
         }
@@ -216,7 +216,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(S2_TestCases3))]
         public void Solution2_3(char[][] board, char[][] ans)
         {
-            var so = new N37_SodokuSolver.Solution2();
+            var so = new N0037_SodokuSolver.Solution2();
             so.SolveSudoku(board);
             Assert.IsTrue(TestHelper.AreEqual(board, ans));
         }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharpImpl
 {
-    public class N38_CountAndSay
+    public class N0038_CountAndSay
     {
         // 38. Count and Say
         // https://leetcode.com/problems/count-and-say/

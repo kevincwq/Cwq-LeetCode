@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace CSharpImpl.Tests
 {
-    public class UT_N38_CountAndSay
+    public class UT_N0038_CountAndSay
     {
         static object[] TestCases =
         {
@@ -18,7 +18,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(TestCases))]
         public void Solution1(int n, string ans)
         {
-            var so = new N38_CountAndSay.Solution1();
+            var so = new N0038_CountAndSay.Solution1();
             var str = so.CountAndSay(n);
             Assert.AreEqual(ans, str);
         }

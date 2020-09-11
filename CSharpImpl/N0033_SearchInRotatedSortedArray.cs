@@ -1,6 +1,6 @@
 ﻿namespace CSharpImpl
 {
-    public class N33_SearchInRotatedSortedArray
+    public class N0033_SearchInRotatedSortedArray
     {
         // 33. Search in Rotated Sorted Array
         // https://leetcode.com/problems/search-in-rotated-sorted-array/

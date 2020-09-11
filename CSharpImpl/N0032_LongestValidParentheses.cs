@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CSharpImpl
 {
-    public class N32_LongestValidParentheses
+    public class N0032_LongestValidParentheses
     {
         // 32. Longest Valid Parentheses
         // https://leetcode.com/problems/longest-valid-parentheses/

@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace CSharpImpl
 {
-    public class N34_FindFirstAndLastPositionOfElementInSortedArray
+    public class N0034_FindFirstAndLastPositionOfElementInSortedArray
     {
         // 34. Find First and Last Position of Element in Sorted Array
         // https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/

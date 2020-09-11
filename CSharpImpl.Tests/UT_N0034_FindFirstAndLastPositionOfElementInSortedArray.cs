@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace CSharpImpl.Tests
 {
-    public class UT_N34_FindFirstAndLastPositionOfElementInSortedArray
+    public class UT_N0034_FindFirstAndLastPositionOfElementInSortedArray
     {
         static object[] TestCases =
         {
@@ -19,7 +19,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(TestCases))]
         public void Solution1(int[] nums, int target, int[] ans)
         {
-            var so = new N34_FindFirstAndLastPositionOfElementInSortedArray.Solution1();
+            var so = new N0034_FindFirstAndLastPositionOfElementInSortedArray.Solution1();
             var index = so.SearchRange(nums, target);
             Assert.IsTrue(Enumerable.SequenceEqual(ans, index));
         }

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace CSharpImpl.Tests
 {
-    public class UT_N39_CombinationSum
+    public class UT_N0039_CombinationSum
     {
         static object[] TestCases =
         {
@@ -16,7 +16,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(TestCases))]
         public void Solution1(int[] candidates, int target, IList<IList<int>> ans)
         {
-            var so = new N39_CombinationSum.Solution1();
+            var so = new N0039_CombinationSum.Solution1();
             var set = so.CombinationSum(candidates, target);
             Assert.IsTrue(TestHelper.AreEqual(ans, set));
         }
@@ -24,7 +24,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(TestCases))]
         public void Solution2(int[] candidates, int target, IList<IList<int>> ans)
         {
-            var so = new N39_CombinationSum.Solution2();
+            var so = new N0039_CombinationSum.Solution2();
             var set = so.CombinationSum(candidates, target);
             Assert.IsTrue(TestHelper.AreEqual(ans, set.OrderBy(s=>s.Count).ToList()));
         }

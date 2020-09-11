@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 
 namespace CSharpImpl
 {
-    public class N37_SodokuSolver
+    public class N0037_SodokuSolver
     {
         // 37. Sudoku Solver
         // https://leetcode.com/problems/sudoku-solver/

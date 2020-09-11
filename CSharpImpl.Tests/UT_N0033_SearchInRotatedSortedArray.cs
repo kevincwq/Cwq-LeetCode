@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace CSharpImpl.Tests
 {
-    public class UT_N33_SearchInRotatedSortedArray
+    public class UT_N0033_SearchInRotatedSortedArray
     {
         static object[] TestCases =
         {
@@ -18,7 +18,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(TestCases))]
         public void Solution1(int[] nums, int target, int ans)
         {
-            var so = new N33_SearchInRotatedSortedArray.Solution1();
+            var so = new N0033_SearchInRotatedSortedArray.Solution1();
             var index = so.Search(nums, target);
             Assert.AreEqual(ans, index);
         }

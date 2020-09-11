@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace CSharpImpl
 {
-    public class N39_CombinationSum
+    public class N0039_CombinationSum
     {
         // 39. Combination Sum
         // https://leetcode.com/problems/combination-sum/

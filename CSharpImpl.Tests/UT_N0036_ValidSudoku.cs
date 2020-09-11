@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace CSharpImpl.Tests
 {
-    public class UT_N36_ValidSudoku
+    public class UT_N0036_ValidSudoku
     {
         static object[] TestCases =
         {
@@ -33,7 +33,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(TestCases))]
         public void Solution1(char[][] board, bool ans)
         {
-            var so = new N36_ValidSudoku.Solution1();
+            var so = new N0036_ValidSudoku.Solution1();
             var valid = so.IsValidSudoku(board);
             Assert.AreEqual(ans, valid);
         }

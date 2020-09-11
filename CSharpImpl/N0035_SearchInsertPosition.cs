@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace CSharpImpl
 {
-    public class N35_SearchInsertPosition
+    public class N0035_SearchInsertPosition
     {
         // 35. Search Insert Position
         // https://leetcode.com/problems/search-insert-position/

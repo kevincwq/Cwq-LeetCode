@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace CSharpImpl.Tests
 {
-    public class UT_N35_SearchInsertPosition
+    public class UT_N0035_SearchInsertPosition
     {
         static object[] TestCases =
         {
@@ -17,7 +17,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(TestCases))]
         public void Solution1(int[] nums, int target, int ans)
         {
-            var so = new N35_SearchInsertPosition.Solution1();
+            var so = new N0035_SearchInsertPosition.Solution1();
             var index = so.SearchInsert(nums, target);
             Assert.AreEqual(ans, index);
         }

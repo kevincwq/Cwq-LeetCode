@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace CSharpImpl
 {
-    public class N36_ValidSudoku
+    public class N0036_ValidSudoku
     {
         // 36. Valid Sudoku
         // https://leetcode.com/problems/valid-sudoku/
