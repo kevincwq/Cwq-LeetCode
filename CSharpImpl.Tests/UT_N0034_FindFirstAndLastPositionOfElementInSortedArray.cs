@@ -17,11 +17,11 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int[] nums, int target, int[] ans)
+        public void Solution1(int[] nums, int target, int[] exptected)
         {
             var so = new N0034_FindFirstAndLastPositionOfElementInSortedArray.Solution1();
-            var index = so.SearchRange(nums, target);
-            Assert.IsTrue(Enumerable.SequenceEqual(ans, index));
+            var ans = so.SearchRange(nums, target);
+            Assert.IsTrue(Enumerable.SequenceEqual(exptected, ans));
         }
     }
 }

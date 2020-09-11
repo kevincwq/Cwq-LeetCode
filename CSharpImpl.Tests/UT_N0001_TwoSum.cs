@@ -13,11 +13,11 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int[] nums, int target, int[] ans)
+        public void Solution1(int[] nums, int target, int[] exptected)
         {
             var so = new N0001_TwoSum.Solution1();
-            var set = so.TwoSum(nums, target);
-            Assert.IsTrue(Enumerable.SequenceEqual(ans, set));
+            var ans = so.TwoSum(nums, target);
+            Assert.IsTrue(Enumerable.SequenceEqual(exptected, ans));
         }
     }
 }

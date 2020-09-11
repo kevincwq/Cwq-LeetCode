@@ -31,11 +31,11 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(char[][] board, bool ans)
+        public void Solution1(char[][] board, bool exptected)
         {
             var so = new N0036_ValidSudoku.Solution1();
-            var valid = so.IsValidSudoku(board);
-            Assert.AreEqual(ans, valid);
+            var ans = so.IsValidSudoku(board);
+            Assert.AreEqual(exptected, ans);
         }
     }
 }

@@ -19,16 +19,6 @@ namespace CSharpImpl
         //Explanation: 342 + 465 = 807.
 
         /// <summary>
-        /// Definition for singly-linked list.
-        /// </summary>
-        public class ListNode
-        {
-            public int val;
-            public ListNode next;
-            public ListNode(int x) { val = x; }
-        }
-
-        /// <summary>
         /// Reuse some nodes of inputs
         /// </summary>
         public class Solution1

@@ -14,19 +14,19 @@ namespace CSharpImpl.Tests
          };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int[] candidates, int target, IList<IList<int>> ans)
+        public void Solution1(int[] candidates, int target, IList<IList<int>> exptected)
         {
             var so = new N0039_CombinationSum.Solution1();
-            var set = so.CombinationSum(candidates, target);
-            Assert.IsTrue(TestHelper.AreEqual(ans, set));
+            var ans = so.CombinationSum(candidates, target);
+            Assert.IsTrue(TestHelper.AreEqual(exptected, ans));
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution2(int[] candidates, int target, IList<IList<int>> ans)
+        public void Solution2(int[] candidates, int target, IList<IList<int>> exptected)
         {
             var so = new N0039_CombinationSum.Solution2();
-            var set = so.CombinationSum(candidates, target);
-            Assert.IsTrue(TestHelper.AreEqual(ans, set.OrderBy(s=>s.Count).ToList()));
+            var ans = so.CombinationSum(candidates, target);
+            Assert.IsTrue(TestHelper.AreEqual(exptected, ans.OrderBy(s => s.Count).ToList()));
         }
     }
 }

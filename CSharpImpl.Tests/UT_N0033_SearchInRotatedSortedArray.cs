@@ -16,11 +16,11 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int[] nums, int target, int ans)
+        public void Solution1(int[] nums, int target, int exptected)
         {
             var so = new N0033_SearchInRotatedSortedArray.Solution1();
-            var index = so.Search(nums, target);
-            Assert.AreEqual(ans, index);
+            var ans = so.Search(nums, target);
+            Assert.AreEqual(exptected, ans);
         }
     }
 }

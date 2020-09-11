@@ -13,35 +13,35 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(string s, int length)
+        public void Solution1(string s, int exptected)
         {
             var so = new N0032_LongestValidParentheses.Solution1();
-            var len = so.LongestValidParentheses(s);
-            Assert.AreEqual(length, len);
+            var ans = so.LongestValidParentheses(s);
+            Assert.AreEqual(exptected, ans);
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution2(string s, int length)
+        public void Solution2(string s, int exptected)
         {
             var so = new N0032_LongestValidParentheses.Solution2();
-            var len = so.LongestValidParentheses(s);
-            Assert.AreEqual(length, len);
+            var ans = so.LongestValidParentheses(s);
+            Assert.AreEqual(exptected, ans);
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution3(string s, int length)
+        public void Solution3(string s, int exptected)
         {
             var so = new N0032_LongestValidParentheses.Solution3();
-            var len = so.LongestValidParentheses(s);
-            Assert.AreEqual(length, len);
+            var ans = so.LongestValidParentheses(s);
+            Assert.AreEqual(exptected, ans);
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution4(string s, int length)
+        public void Solution4(string s, int exptected)
         {
             var so = new N0032_LongestValidParentheses.Solution4();
-            var len = so.LongestValidParentheses(s);
-            Assert.AreEqual(length, len);
+            var ans = so.LongestValidParentheses(s);
+            Assert.AreEqual(exptected, ans);
         }
     }
 }
