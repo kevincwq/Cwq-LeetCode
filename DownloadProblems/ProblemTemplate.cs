@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 
 namespace DownloadProblems
 {
@@ -35,6 +32,30 @@ namespace {0}
 {3}
     }}
 }}";
+        // {0} -- namespace
+        // {1} -- class name
+        private static readonly string UTCodeTemplate =
+@"using System;
+using System.Collections.Generic;
+using NUnit.Framework;
+using System.Linq;
+
+namespace {0}
+{{
+    public class {1} 
+    {{
+        static object[] TestCases =
+        {{
+            new object[]{{ new int[] {{}}, new int[] {{ }} }},
+        }};
+
+        // [TestCaseSource(nameof(TestCases))]
+        public void Solution1(int[] input, int[] exptected)
+        {{
+            throw new NotImplementedException();
+        }}
+    }}
+}}";
         public int Id { get; }
 
         public string Title { get; }
@@ -54,6 +75,12 @@ namespace {0}
         public string CsFileName { get; }
 
         public string CodeSnippet { get; }
+
+        public string UTClassName => "UT_" + ClassName;
+
+        public string UTNamespace => Namespace + ".Tests";
+
+        public string UTCsFileName => "UT_" + CsFileName;
 
         public ProblemTemplate(int id, string title, string slug, string rawContent, string codeSnippet, string ns = "CSharpImpl")
         {
@@ -97,7 +124,7 @@ namespace {0}
                 newLines.Add(string.Format(CodeSnippetLineFormat, lines.First()));
                 for (int i = 1; i < lines.Length - 1; i++)
                 {
-                    if (string.IsNullOrWhiteSpace(lines[i]) && lines[i - 1].Trim().EndsWith("{") && lines[i+1].Trim()=="}")
+                    if (string.IsNullOrWhiteSpace(lines[i]) && lines[i - 1].Trim().EndsWith("{") && lines[i + 1].Trim() == "}")
                     {
                         newLines.Add(string.Format(CodeSnippetLineFormat, lines[i] + NotImplement));
                     }
@@ -114,9 +141,14 @@ namespace {0}
             return string.Join("\r\n", newLines);
         }
 
-        public override string ToString()
+        public string ToCodeFile()
         {
             return string.Format(CodeTemplate, Namespace, Content, ClassName, CodeSnippet, Url);
+        }
+
+        public string ToUTCodeFile()
+        {
+            return string.Format(UTCodeTemplate, UTNamespace, UTClassName);
         }
     }
 }

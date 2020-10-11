@@ -89,8 +89,11 @@ namespace DownloadProblems
                     question.Content ?? string.Empty,
                     snippet
                     );
-                var code = template.ToString();
-                await File.WriteAllTextAsync(Path.Combine(CShaprFolder, template.CsFileName), code);
+                //var code = template.ToCodeFile();
+                //await File.WriteAllTextAsync(Path.Combine(CShaprFolder, template.CsFileName), code);
+
+                var utCode = template.ToUTCodeFile();
+                await File.WriteAllTextAsync(Path.Combine(CShaprFolder, template.UTCsFileName), utCode);
             }
         }
 
