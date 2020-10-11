@@ -1,23 +1,38 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace CSharpImpl
 {
+    /// <summary>
+    /// link: https://leetcode.com/problems/longest-palindromic-substring/
+    /// 
+    /// Given a string s, return the longest palindromic substring in s.
+    /// 
+    /// Example 1:
+    /// Input: s = "babad"
+    /// Output: "bab"
+    /// Note: "aba" is also a valid answer.
+    /// 
+    /// Example 2:
+    /// Input: s = "cbbd"
+    /// Output: "bb"
+    /// 
+    /// Example 3:
+    /// Input: s = "a"
+    /// Output: "a"
+    /// 
+    /// Example 4:
+    /// Input: s = "ac"
+    /// Output: "a"
+    /// 
+    /// 
+    /// Constraints:
+    /// * 1 <= s.length <= 1000
+    /// * s consist of only digits and English letters (lower-case and/or upper-case),
+    /// 
+    /// </summary>
     public class N0005_LongestPalindromicSubstring
     {
-        // 5. LongestPalindromicSubstring
-        // https://leetcode.com/problems/median-of-two-sorted-arrays/
-        // Given a string s, find the longest palindromic substring in s.You may assume that the maximum length of s is 1000.
-
-        //Example 1:
-        //Input: "babad"
-        //Output: "bab"
-        //Note: "aba" is also a valid answer.
-
-        //Example 2:
-        //Input: "cbbd"
-        //Output: "bb"
-
         /// <summary>
         /// Expand
         /// </summary>

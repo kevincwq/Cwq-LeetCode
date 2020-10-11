@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DownloadProblems": {
+      "commandName": "Project",
+      "commandLineArgs": "-2cs"
+    }
+  }
+}

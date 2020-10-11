@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text.Json;
@@ -69,9 +70,28 @@ namespace DownloadProblems
             Console.ReadKey();
         }
 
-        private static Task Convert2CS()
+        private static async Task Convert2CS()
         {
-            throw new NotImplementedException();
+            foreach (var file in Directory.EnumerateFiles(ProblemsFolder, "*.json"))
+            {
+                var jsonContent = File.ReadAllText(file);
+
+                var problem = JsonSerializer.Deserialize<Problem>(jsonContent, new JsonSerializerOptions()
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+                var question = problem.Data.Question;
+                var snippet = question.CodeSnippets?.FirstOrDefault(s => s.LangSlug == "csharp")?.Code ?? string.Empty;
+                var template = new ProblemTemplate(
+                    int.Parse(question.QuestionFrontendId),
+                    question.Title,
+                    question.TitleSlug,
+                    question.Content ?? string.Empty,
+                    snippet
+                    );
+                var code = template.ToString();
+                await File.WriteAllTextAsync(Path.Combine(CShaprFolder, template.CsFileName), code);
+            }
         }
 
         private static async Task DownloadProblems()
@@ -83,7 +103,7 @@ namespace DownloadProblems
                 {
                     // Step 1: download all problems from
                     var problemsJsonStr = await client.GetStringAsync(ProblemsStatAPI);
-                    File.WriteAllText(Path.Combine(ProblemsFolder, "AllProblems.json"), problemsJsonStr);
+                    File.WriteAllText(Path.Combine(DocFolder, "AllProblems.json"), problemsJsonStr);
                     Console.WriteLine($"Problem list downloaded");
 
                     var problemsJsonDoc = JsonDocument.Parse(problemsJsonStr);

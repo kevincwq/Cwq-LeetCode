@@ -18,7 +18,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(TestCases))]
         public void Solution1(string s, int numRows, string exptected)
         {
-            var so = new N0006_ZigZagConversion.Solution1();
+            var so = new N0006_ZigzagConversion.Solution1();
             var ans = so.Convert(s, numRows);
             Assert.AreEqual(exptected, ans);
         }
@@ -26,7 +26,7 @@ namespace CSharpImpl.Tests
         [TestCaseSource(nameof(TestCases))]
         public void Solution2(string s, int numRows, string exptected)
         {
-            var so = new N0006_ZigZagConversion.Solution2();
+            var so = new N0006_ZigzagConversion.Solution2();
             var ans = so.Convert(s, numRows);
             Assert.AreEqual(exptected, ans);
         }
