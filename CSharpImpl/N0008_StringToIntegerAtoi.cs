@@ -47,9 +47,75 @@ namespace CSharpImpl
     /// </summary>
     public class N0008_StringToIntegerAtoi
     {
-        public class Solution1 {
-            public int MyAtoi(string s) {
-                throw new NotImplementedException();
+        /// <summary>
+        /// Scan from left to right
+        /// </summary>
+        public class Solution1
+        {
+            public int MyAtoi(string s)
+            {
+                long ret = 0, max = 1L << 32;
+                bool started = false;
+                bool signed = false;
+                foreach (var ch in s)
+                {
+                    if (!started)
+                    {
+                        if (ch == ' ')
+                        {
+                            continue;
+                        }
+                        else if (ch >= '0' && ch <= '9')
+                        {
+                            started = true;
+                            signed = false;
+                        }
+                        else if (ch == '+')
+                        {
+                            started = true;
+                            signed = false;
+                            continue;
+                        }
+                        else if (ch == '-')
+                        {
+                            started = true;
+                            signed = true;
+                            continue;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    if (started)
+                    {
+                        if (ch < '0' || ch > '9')
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            ret = ret * 10 + (ch - '0');
+                            if (ret > max)
+                                break;
+                        }
+                    }
+                }
+
+                if (started)
+                {
+                    if (signed)
+                    {
+                        ret = -ret;
+                    }
+                    if (ret < int.MinValue)
+                        ret = int.MinValue;
+                    else if (ret > int.MaxValue)
+                        ret = int.MaxValue;
+                }
+
+                return (int)ret;
             }
         }
     }
