@@ -29,9 +29,56 @@ namespace CSharpImpl
     /// </summary>
     public class N0015_3Sum
     {
-        public class Solution1 {
-            public IList<IList<int>> ThreeSum(int[] nums) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public IList<IList<int>> ThreeSum(int[] nums)
+            {
+                List<IList<int>> rets = new List<IList<int>>();
+
+                Array.Sort(nums);
+                for (int i = 0; i < nums.Length - 2; i++)
+                {
+                    // remove duplicates
+                    if (i > 0 && nums[i] == nums[i - 1])
+                        continue;
+
+                    var target = -nums[i];
+                    int left = i + 1, right = nums.Length - 1;
+
+                    while (left < right)
+                    {
+                        if (2 * nums[left] > target || 2 * nums[right] < target)
+                        {
+                            break;
+                        }
+
+                        var sum = nums[left] + nums[right];
+                        if (sum == target)
+                        {
+                            rets.Add(new List<int>() { -target, nums[left], nums[right] });
+                            // remove duplicates
+                            while (++left <= right)
+                            {
+                                if (nums[left] != nums[left - 1])
+                                    break;
+                            }
+                            while (left <= --right)
+                            {
+                                if (nums[right] != nums[right + 1])
+                                    break;
+                            }
+                        }
+                        else if (sum < target)
+                        {
+                            left++;
+                        }
+                        else
+                        {
+                            right--;
+                        }
+                    }
+                }
+                return rets;
             }
         }
     }
