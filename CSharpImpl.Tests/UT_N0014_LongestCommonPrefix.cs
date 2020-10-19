@@ -9,13 +9,18 @@ namespace CSharpImpl.Tests
     {
         static object[] TestCases =
         {
-            new object[]{ new int[] {}, new int[] { } },
+            new object[]{ new string[] { "flower", "flow", "flight" }, "fl" },
+            new object[]{ new string[] { "dog", "racecar", "car" }, "" },
+            new object[]{ new string[] { }, "" },
+            new object[]{ new string[] { "abc", "" }, "" },
         };
 
-        // [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int[] input, int[] expected)
+        [TestCaseSource(nameof(TestCases))]
+        public void Solution1(string[] input, string expected)
         {
-            throw new NotImplementedException();
+            var so = new N0014_LongestCommonPrefix.Solution1();
+            var ans = so.LongestCommonPrefix(input);
+            Assert.AreEqual(expected, ans);
         }
     }
 }
