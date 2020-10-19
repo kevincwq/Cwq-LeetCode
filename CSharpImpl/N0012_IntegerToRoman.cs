@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace CSharpImpl
 {
@@ -52,9 +53,35 @@ namespace CSharpImpl
     /// </summary>
     public class N0012_IntegerToRoman
     {
-        public class Solution1 {
-            public string IntToRoman(int num) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public string IntToRoman(int num)
+            {
+                var dict = new Dictionary<int, string>(){
+                    { 1000, "M" },
+                    { 900,  "CM" },
+                    { 500,  "D" },
+                    { 400,  "CD" },
+                    { 100,  "C" },
+                    { 90,   "XC" },
+                    { 50,   "L" },
+                    { 40,   "XL" },
+                    { 10,   "X" },
+                    { 9,    "IX" },
+                    { 5,    "V" },
+                    { 4,    "IV" },
+                    { 1,    "I" }
+                };
+                var sb = new StringBuilder();
+                foreach (var kv in dict)
+                {
+                    while (num >= kv.Key)
+                    {
+                        num -= kv.Key;
+                        sb.Append(kv.Value);
+                    }
+                }
+                return sb.ToString();
             }
         }
     }
