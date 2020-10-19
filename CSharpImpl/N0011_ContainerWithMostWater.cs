@@ -34,9 +34,28 @@ namespace CSharpImpl
     /// </summary>
     public class N0011_ContainerWithMostWater
     {
-        public class Solution1 {
-            public int MaxArea(int[] height) {
-                throw new NotImplementedException();
+        /// <summary>
+        /// Two Pointer Approach
+        /// </summary>
+        public class Solution1
+        {
+            public int MaxArea(int[] height)
+            {
+                int left = 0, right = height.Length - 1;
+                int max = 0;
+                while (left < right)
+                {
+                    var area = Math.Min(height[left], height[right]) * (right - left);
+                    if (area > max)
+                    {
+                        max = area;
+                    }
+                    if (height[left] < height[right])
+                        left++;
+                    else
+                        right--;
+                }
+                return max;
             }
         }
     }
