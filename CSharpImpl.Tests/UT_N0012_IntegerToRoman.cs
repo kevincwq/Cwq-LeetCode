@@ -33,11 +33,11 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int input, string exptected)
+        public void Solution1(int input, string expected)
         {
             var so = new N0012_IntegerToRoman.Solution1();
             var ans = so.IntToRoman(input);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
     }
 }

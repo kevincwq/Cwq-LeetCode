@@ -14,11 +14,11 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int[] A, int[] B, double exptected)
+        public void Solution1(int[] A, int[] B, double expected)
         {
             var so = new N0004_MedianOfTwoSortedArrays.Solution1();
             var ans = so.FindMedianSortedArrays(A, B);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
     }
 }

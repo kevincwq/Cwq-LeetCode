@@ -17,19 +17,19 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int input, bool exptected)
+        public void Solution1(int input, bool expected)
         {
             var so = new N0009_PalindromeNumber.Solution1();
             var ans = so.IsPalindrome(input);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution2(int input, bool exptected)
+        public void Solution2(int input, bool expected)
         {
             var so = new N0009_PalindromeNumber.Solution2();
             var ans = so.IsPalindrome(input);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
     }
 }

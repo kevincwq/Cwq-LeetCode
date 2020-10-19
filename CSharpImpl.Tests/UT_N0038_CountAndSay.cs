@@ -16,11 +16,11 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int n, string exptected)
+        public void Solution1(int n, string expected)
         {
             var so = new N0038_CountAndSay.Solution1();
             var ans = so.CountAndSay(n);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
     }
 }

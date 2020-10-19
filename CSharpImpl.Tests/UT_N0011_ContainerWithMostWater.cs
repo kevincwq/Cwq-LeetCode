@@ -17,11 +17,11 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int[] input, int exptected)
+        public void Solution1(int[] input, int expected)
         {
             var so = new N0011_ContainerWithMostWater.Solution1();
             var ans = so.MaxArea(input);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
     }
 }

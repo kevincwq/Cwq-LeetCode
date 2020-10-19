@@ -16,19 +16,19 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(string s, int numRows, string exptected)
+        public void Solution1(string s, int numRows, string expected)
         {
             var so = new N0006_ZigzagConversion.Solution1();
             var ans = so.Convert(s, numRows);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution2(string s, int numRows, string exptected)
+        public void Solution2(string s, int numRows, string expected)
         {
             var so = new N0006_ZigzagConversion.Solution2();
             var ans = so.Convert(s, numRows);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
     }
 }

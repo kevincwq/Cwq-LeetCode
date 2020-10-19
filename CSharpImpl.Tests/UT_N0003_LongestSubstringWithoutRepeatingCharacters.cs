@@ -16,11 +16,11 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(string s, int exptected)
+        public void Solution1(string s, int expected)
         {
             var so = new N0003_LongestSubstringWithoutRepeatingCharacters.Solution1();
             var ans = so.LengthOfLongestSubstring(s);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
     }
 }

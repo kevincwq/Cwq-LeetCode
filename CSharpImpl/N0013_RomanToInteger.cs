@@ -54,9 +54,35 @@ namespace CSharpImpl
     /// </summary>
     public class N0013_RomanToInteger
     {
-        public class Solution1 {
-            public int RomanToInt(string s) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public int RomanToInt(string s)
+            {
+                var dict = new Dictionary<char, int>()
+                {
+                    { 'I', 1 },
+                    { 'V', 5 },
+                    { 'X', 10 },
+                    { 'L', 50 },
+                    { 'C', 100 },
+                    { 'D', 500 },
+                    { 'M', 1000 }
+                };
+
+                var num = 0;
+                for (int i = s.Length - 1; i > -1; i--)
+                {
+                    var num_i = dict[s[i]];
+                    if (i < s.Length - 1 && num_i < dict[s[i + 1]])
+                    {
+                        num -= num_i;
+                    }
+                    else
+                    {
+                        num += num_i;
+                    }
+                }
+                return num;
             }
         }
     }

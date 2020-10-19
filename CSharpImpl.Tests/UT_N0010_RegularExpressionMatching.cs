@@ -27,27 +27,27 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(string s, string p, bool exptected)
+        public void Solution1(string s, string p, bool expected)
         {
             var so = new N0010_RegularExpressionMatching.Solution1();
             var ans = so.IsMatch(s, p);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution2(string s, string p, bool exptected)
+        public void Solution2(string s, string p, bool expected)
         {
             var so = new N0010_RegularExpressionMatching.Solution2();
             var ans = so.IsMatch(s, p);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution3(string s, string p, bool exptected)
+        public void Solution3(string s, string p, bool expected)
         {
             var so = new N0010_RegularExpressionMatching.Solution3();
             var ans = so.IsMatch(s, p);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
     }
 }

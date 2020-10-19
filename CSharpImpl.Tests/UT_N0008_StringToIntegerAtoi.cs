@@ -18,11 +18,11 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(string input, int exptected)
+        public void Solution1(string input, int expected)
         {
             var so = new N0008_StringToIntegerAtoi.Solution1();
             var ans = so.MyAtoi(input);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
     }
 }

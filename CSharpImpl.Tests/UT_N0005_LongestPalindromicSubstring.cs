@@ -13,20 +13,20 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(string s, string exptected)
+        public void Solution1(string s, string expected)
         {
             var so = new N0005_LongestPalindromicSubstring.Solution1();
             var ans = so.LongestPalindrome(s);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
 
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution2(string s, string exptected)
+        public void Solution2(string s, string expected)
         {
             var so = new N0005_LongestPalindromicSubstring.Solution2();
             var ans = so.LongestPalindrome(s);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
     }
 }

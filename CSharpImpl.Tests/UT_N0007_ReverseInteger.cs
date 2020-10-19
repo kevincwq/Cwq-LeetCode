@@ -14,19 +14,19 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int x, int exptected)
+        public void Solution1(int x, int expected)
         {
             var so = new N0007_ReverseInteger.Solution1();
             var ans = so.Reverse(x);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution2(int x, int exptected)
+        public void Solution2(int x, int expected)
         {
             var so = new N0007_ReverseInteger.Solution2();
             var ans = so.Reverse(x);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
     }
 }

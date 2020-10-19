@@ -13,7 +13,7 @@ namespace CSharpImpl.Tests
         };
 
         // [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int[] input, int[] exptected)
+        public void Solution1(int[] input, int[] expected)
         {
             throw new NotImplementedException();
         }

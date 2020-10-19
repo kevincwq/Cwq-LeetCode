@@ -13,35 +13,35 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution1(string s, int exptected)
+        public void Solution1(string s, int expected)
         {
             var so = new N0032_LongestValidParentheses.Solution1();
             var ans = so.LongestValidParentheses(s);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution2(string s, int exptected)
+        public void Solution2(string s, int expected)
         {
             var so = new N0032_LongestValidParentheses.Solution2();
             var ans = so.LongestValidParentheses(s);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution3(string s, int exptected)
+        public void Solution3(string s, int expected)
         {
             var so = new N0032_LongestValidParentheses.Solution3();
             var ans = so.LongestValidParentheses(s);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Solution4(string s, int exptected)
+        public void Solution4(string s, int expected)
         {
             var so = new N0032_LongestValidParentheses.Solution4();
             var ans = so.LongestValidParentheses(s);
-            Assert.AreEqual(exptected, ans);
+            Assert.AreEqual(expected, ans);
         }
     }
 }

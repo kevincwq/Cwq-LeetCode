@@ -22,20 +22,20 @@ namespace CSharpImpl.Tests
         };
 
         [TestCaseSource(nameof(TestCases1))]
-        public void Solution1(ListNode l1, ListNode l2, ListNode exptected)
+        public void Solution1(ListNode l1, ListNode l2, ListNode expected)
         {
             var so = new N0002_AddTwoNumbers.Solution1();
             var ans = so.AddTwoNumbers(l1, l2);
-            Assert.IsTrue(Enumerable.SequenceEqual(exptected.GetValues(), ans.GetValues()));
+            Assert.IsTrue(Enumerable.SequenceEqual(expected.GetValues(), ans.GetValues()));
         }
 
 
         [TestCaseSource(nameof(TestCases2))]
-        public void Solution2(ListNode l1, ListNode l2, ListNode exptected)
+        public void Solution2(ListNode l1, ListNode l2, ListNode expected)
         {
             var so = new N0002_AddTwoNumbers.Solution2();
             var ans = so.AddTwoNumbers(l1, l2);
-            Assert.IsTrue(Enumerable.SequenceEqual(exptected.GetValues(), ans.GetValues()));
+            Assert.IsTrue(Enumerable.SequenceEqual(expected.GetValues(), ans.GetValues()));
         }
     }
 }
