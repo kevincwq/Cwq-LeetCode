@@ -22,9 +22,63 @@ namespace CSharpImpl
     /// </summary>
     public class N0016_3SumClosest
     {
-        public class Solution1 {
-            public int ThreeSumClosest(int[] nums, int target) {
-                throw new NotImplementedException();
+        /// <summary>
+        /// Two Pointers
+        /// </summary>
+        public class Solution1
+        {
+            public int ThreeSumClosest(int[] nums, int target)
+            {
+                int diff = int.MaxValue;
+                Array.Sort(nums);
+                for (int i = 0; i < nums.Length - 2 && diff != 0; i++)
+                {
+                    int left = i + 1, right = nums.Length - 1;
+                    while (left < right)
+                    {
+                        var sum = nums[left] + nums[right] + nums[i];
+                        var temp = sum - target;
+                        if (Math.Abs(temp) < Math.Abs(diff))
+                        {
+                            diff = temp;
+                        }
+                        if (temp > 0)
+                        {
+                            right--;
+                        }
+                        else
+                        {
+                            left++;
+                        }
+                    }
+                }
+                return diff + target;
+            }
+        }
+
+        /// <summary>
+        /// Binary Search
+        /// </summary>
+        public class Solution2
+        {
+            public int ThreeSumClosest(int[] nums, int target)
+            {
+                int diff = int.MaxValue;
+                Array.Sort(nums);
+                for (int i = 0; i < nums.Length - 2 && diff != 0; i++)
+                {
+                    for (int j = i + 1; j < nums.Length - 1; j++)
+                    {
+                        int complement = target - nums[i] - nums[j];
+                        int idx = Array.BinarySearch(nums, j + 1, nums.Length - j - 1, complement);
+                        int hi = idx >= 0 ? idx : ~idx, lo = hi - 1;
+                        if (hi < nums.Length && Math.Abs(complement - nums[hi]) < Math.Abs(diff))
+                            diff = complement - nums[hi];
+                        if (lo > j && Math.Abs(complement - nums[lo]) < Math.Abs(diff))
+                            diff = complement - nums[lo];
+                    }
+                }
+                return target - diff;
             }
         }
     }
