@@ -26,7 +26,7 @@ namespace CSharpImpl.Tests
         {
             var so = new N0002_AddTwoNumbers.Solution1();
             var ans = so.AddTwoNumbers(l1, l2);
-            Assert.IsTrue(Enumerable.SequenceEqual(expected.GetValues(), ans.GetValues()));
+            Assert.IsTrue(Enumerable.SequenceEqual(ListNode.GetValues(expected), ListNode.GetValues(ans)));
         }
 
 
@@ -35,7 +35,7 @@ namespace CSharpImpl.Tests
         {
             var so = new N0002_AddTwoNumbers.Solution2();
             var ans = so.AddTwoNumbers(l1, l2);
-            Assert.IsTrue(Enumerable.SequenceEqual(expected.GetValues(), ans.GetValues()));
+            Assert.IsTrue(Enumerable.SequenceEqual(ListNode.GetValues(expected), ListNode.GetValues(ans)));
         }
     }
 }

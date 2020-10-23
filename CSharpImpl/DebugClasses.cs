@@ -23,9 +23,8 @@ namespace CSharpImpl
             return result.next;
         }
 
-        public IEnumerable<int> GetValues()
+        public static IEnumerable<int> GetValues(ListNode listNode)
         {
-            var listNode = this;
             while (listNode != null)
             {
                 yield return listNode.val;
