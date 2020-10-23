@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSharpImpl
 {
@@ -83,7 +84,31 @@ namespace CSharpImpl
                 };
             public IList<string> LetterCombinations(string digits)
             {
-                throw new NotImplementedException();
+                if (digits.Length > 0)
+                    return Expand(digits, digits.Length - 1).ToList();
+                return new List<string>();
+            }
+
+            public IEnumerable<string> Expand(string digits, int index)
+            {
+                var chs = Map[digits[index] - '2'];
+                if (index == 0)
+                {
+                    foreach (var ch in chs)
+                    {
+                        yield return ch.ToString();
+                    }
+                }
+                else
+                {
+                    foreach (var it in Expand(digits, index - 1))
+                    {
+                        foreach (var ch in chs)
+                        {
+                            yield return it + ch;
+                        }
+                    }
+                }
             }
         }
     }
