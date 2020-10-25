@@ -49,9 +49,50 @@ namespace CSharpImpl
          *     }
          * }
          */
-        public class Solution1 {
-            public ListNode MergeKLists(ListNode[] lists) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public ListNode MergeKLists(ListNode[] lists)
+            {
+                var count = lists.Length;
+                while (count > 1)
+                {
+                    var half = count / 2;
+                    for (int i = 0; i < half; i++)
+                    {
+                        lists[i] = MergeTwoLists(lists[i], lists[i + half]);
+                    }
+                    if (count % 2 != 0)
+                    {
+                        lists[half] = lists[count - 1];
+                    }
+                    count = (count + 1) / 2;
+                }
+                if (count == 1)
+                    return lists[0];
+                else
+                    return null;
+            }
+
+            private ListNode MergeTwoLists(ListNode l1, ListNode l2)
+            {
+                var dummy = new ListNode(0);
+                var move = dummy;
+                while (l1 != null && l2 != null)
+                {
+                    if (l1.val < l2.val)
+                    {
+                        move.next = l1;
+                        l1 = l1.next;
+                    }
+                    else
+                    {
+                        move.next = l2;
+                        l2 = l2.next;
+                    }
+                    move = move.next;
+                }
+                move.next = l1 ?? l2;
+                return dummy.next;
             }
         }
     }

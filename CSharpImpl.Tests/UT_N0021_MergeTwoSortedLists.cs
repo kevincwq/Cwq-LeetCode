@@ -9,7 +9,8 @@ namespace CSharpImpl.Tests
         {
             new object[]{ ListNode.FromValues(new[] { 1, 2, 4 }), ListNode.FromValues(new[] { 1, 3, 4 } ),  ListNode.FromValues(new[] { 1, 1, 2, 3, 4, 4 } )},
             new object[]{ ListNode.FromValues(new int[] { }), ListNode.FromValues(new int[] { }), ListNode.FromValues(new int[] { })},
-            new object[]{ ListNode.FromValues(new int[] { }), ListNode.FromValues(new[] { 0 } ), ListNode.FromValues(new[] { 0 } )}};
+            new object[]{ ListNode.FromValues(new int[] { }), ListNode.FromValues(new[] { 0 } ), ListNode.FromValues(new[] { 0 } )}
+        };
 
         [TestCaseSource(nameof(TestCases))]
         public void Solution1(ListNode l1, ListNode l2, ListNode expected)
