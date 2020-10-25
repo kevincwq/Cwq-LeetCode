@@ -40,9 +40,28 @@ namespace CSharpImpl
          *     }
          * }
          */
-        public class Solution1 {
-            public ListNode MergeTwoLists(ListNode l1, ListNode l2) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public ListNode MergeTwoLists(ListNode l1, ListNode l2)
+            {
+                var dummy = new ListNode(0);
+                var move = dummy;
+                while (l1 != null && l2 != null)
+                {
+                    if (l1.val < l2.val)
+                    {
+                        move.next = l1;
+                        l1 = l1.next;
+                    }
+                    else
+                    {
+                        move.next = l2;
+                        l2 = l2.next;
+                    }
+                    move = move.next;
+                }
+                move.next = l1 ?? l2;
+                return dummy.next;
             }
         }
     }

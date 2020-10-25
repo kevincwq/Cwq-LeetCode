@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSharpImpl
 {
@@ -23,9 +24,36 @@ namespace CSharpImpl
     /// </summary>
     public class N0022_GenerateParentheses
     {
-        public class Solution1 {
-            public IList<string> GenerateParenthesis(int n) {
-                throw new NotImplementedException();
+        /// <summary>
+        /// Backtracking
+        /// </summary>
+        public class Solution1
+        {
+            public IList<string> GenerateParenthesis(int n)
+            {
+                return GenerateParenthesis(n, 0, 0).ToList();
+            }
+
+            private IEnumerable<string> GenerateParenthesis(int n, int left, int right)
+            {
+                if (left == n)
+                {
+                    yield return new string(')', n - right);
+                }
+                else
+                {
+                    foreach (var ret in GenerateParenthesis(n, left + 1, right))
+                    {
+                        yield return '(' + ret;
+                    }
+                    if (left > right)
+                    {
+                        foreach(var ret in GenerateParenthesis(n, left, right+1))
+                        {
+                            yield return ')' + ret;
+                        }
+                    }
+                }
             }
         }
     }
