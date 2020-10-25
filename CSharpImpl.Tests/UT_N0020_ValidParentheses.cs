@@ -9,13 +9,19 @@ namespace CSharpImpl.Tests
     {
         static object[] TestCases =
         {
-            new object[]{ new int[] {}, new int[] { } },
+            new object[]{ "()", true },
+            new object[]{ "()[]{}", true },
+            new object[]{ "(]", false },
+            new object[]{ "([)]", false },
+            new object[]{ "{[]}", true }
         };
 
-        // [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int[] input, int[] expected)
+        [TestCaseSource(nameof(TestCases))]
+        public void Solution1(string input, bool expected)
         {
-            throw new NotImplementedException();
+            var so = new N0020_ValidParentheses.Solution1();
+            var ans = so.IsValid(input);
+            Assert.AreEqual(expected, ans);
         }
     }
 }

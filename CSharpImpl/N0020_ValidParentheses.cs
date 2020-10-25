@@ -39,9 +39,40 @@ namespace CSharpImpl
     /// </summary>
     public class N0020_ValidParentheses
     {
-        public class Solution1 {
-            public bool IsValid(string s) {
-                throw new NotImplementedException();
+        /// <summary>
+        /// Stack
+        /// </summary>
+        public class Solution1
+        {
+            public bool IsValid(string s)
+            {
+                if (s.Length % 2 != 0)
+                    return false;
+
+                var stack = new Stack<char>();
+                foreach (var ch in s)
+                {
+                    if (stack.Count == 0)
+                    {
+                        if (ch == ')' || ch == ']' || ch == '}')
+                            return false;
+                        else
+                            stack.Push(ch);
+                    }
+                    else
+                    {
+                        var peek = stack.Peek();
+                        if ((peek == '(' && ch == ')') || (peek == '[' && ch == ']') || (peek == '{' && ch == '}'))
+                        {
+                            stack.Pop();
+                        }
+                        else
+                        {
+                            stack.Push(ch);
+                        }
+                    }
+                }
+                return stack.Count == 0;
             }
         }
     }
