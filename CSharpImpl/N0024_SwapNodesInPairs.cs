@@ -40,9 +40,21 @@ namespace CSharpImpl
          *     }
          * }
          */
-        public class Solution1 {
-            public ListNode SwapPairs(ListNode head) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public ListNode SwapPairs(ListNode head)
+            {
+                var dummy = new ListNode(0) { next = head };
+                var it = dummy;
+                while (it.next != null && it.next.next != null)
+                {
+                    var temp = it.next;
+                    it.next = temp.next;
+                    temp.next = temp.next.next;
+                    it.next.next = temp;
+                    it = temp;
+                }
+                return dummy.next;
             }
         }
     }
