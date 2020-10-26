@@ -49,9 +49,47 @@ namespace CSharpImpl
          *     }
          * }
          */
-        public class Solution1 {
-            public ListNode ReverseKGroup(ListNode head, int k) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public ListNode ReverseKGroup(ListNode head, int k)
+            {
+                if (k == 1 || head == null || head.next == null)
+                {
+                    return head;
+                }
+                else
+                {
+                    ListNode dummy = new ListNode(0) { next = head };
+                    ListNode pre = dummy;
+                    while (pre != null && pre.next != null)
+                    {
+                        ListNode begin = pre.next;
+                        ListNode end = begin;
+
+                        // find the end node
+                        int count = 0;
+                        while (count != k - 1 && end != null && end.next != null)
+                        {
+                            end = end.next;
+                            count++;
+                        }
+                        if (count != k - 1)
+                            break;
+
+                        // reverse
+                        while (count > 0)
+                        {
+                            var temp = begin.next;
+                            begin.next = temp.next;
+                            temp.next = pre.next;
+                            pre.next = temp;
+                            count--;
+                        }
+
+                        pre = begin;
+                    }
+                    return dummy.next;
+                }
             }
         }
     }
