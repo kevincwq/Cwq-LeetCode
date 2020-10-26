@@ -28,9 +28,27 @@ namespace CSharpImpl
     /// </summary>
     public class N0026_RemoveDuplicatesFromSortedArray
     {
-        public class Solution1 {
-            public int RemoveDuplicates(int[] nums) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public int RemoveDuplicates(int[] nums)
+            {
+                if (nums.Length > 1)
+                {
+                    var index = 0;
+                    for (int i = 1; i < nums.Length; i++)
+                    {
+                        if (nums[i] != nums[index])
+                        {
+                            nums[++index] = nums[i];
+                        }
+                    }
+                    return index + 1;
+                }
+                else
+                {
+                    return nums.Length;
+                }
+
             }
         }
     }
