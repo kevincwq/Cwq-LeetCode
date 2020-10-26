@@ -23,9 +23,46 @@ namespace CSharpImpl
     /// </summary>
     public class N0027_RemoveElement
     {
-        public class Solution1 {
-            public int RemoveElement(int[] nums, int val) {
-                throw new NotImplementedException();
+        /// <summary>
+        /// Two Pointers
+        /// </summary>
+        public class Solution1
+        {
+            public int RemoveElement(int[] nums, int val)
+            {
+                int removed = 0;
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    nums[i - removed] = nums[i];
+                    if (nums[i] == val)
+                        removed++;
+                }
+                return nums.Length - removed;
+            }
+        }
+
+        /// <summary>
+        /// Two Pointers - when elements to remove are rare
+        /// Swap with the last element
+        /// Note: the order of the elements can be changed
+        /// </summary>
+        public class Solution2
+        {
+            public int RemoveElement(int[] nums, int val)
+            {
+                int i = 0, n = nums.Length;
+                while (i < n)
+                {
+                    if (nums[i] == val)
+                    {
+                        nums[i] = nums[--n];
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                }
+                return n;
             }
         }
     }
