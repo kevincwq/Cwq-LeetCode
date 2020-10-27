@@ -32,9 +32,38 @@ namespace CSharpImpl
     /// </summary>
     public class N0028_ImplementStrstr
     {
-        public class Solution1 {
-            public int StrStr(string haystack, string needle) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public int StrStr(string haystack, string needle)
+            {
+                // return 0 when needle is an empty string
+                if (string.IsNullOrEmpty(needle))
+                {
+                    return 0;
+                }
+
+                if (string.IsNullOrEmpty(haystack))
+                {
+                    return -1;
+                }
+
+                for (int i = 0; i <= haystack.Length - needle.Length; i++)
+                {
+                    if (haystack[i] == needle[0])
+                    {
+                        int j = 1;
+                        while (j < needle.Length)
+                        {
+                            if (haystack[i + j] != needle[j])
+                                break;
+                            j++;
+                        }
+                        if (j == needle.Length)
+                            return i;
+                    }
+                }
+
+                return -1;
             }
         }
     }

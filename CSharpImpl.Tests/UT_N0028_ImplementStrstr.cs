@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
 using NUnit.Framework;
-using System.Linq;
 
 namespace CSharpImpl.Tests
 {
@@ -9,13 +6,19 @@ namespace CSharpImpl.Tests
     {
         static object[] TestCases =
         {
-            new object[]{ new int[] {}, new int[] { } },
+            new object[]{ "hello", "ll", 2 },
+            new object[]{ "aaaaa", "bba", -1 },
+            new object[]{ "", "", 0 },
+            new object[]{ "", "abc", -1 },
+            new object[]{ "aaaaabba", "bba", 5 },
         };
 
-        // [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int[] input, int[] expected)
+        [TestCaseSource(nameof(TestCases))]
+        public void Solution1(string haystack, string needle, int expected)
         {
-            throw new NotImplementedException();
+            var so = new N0028_ImplementStrstr.Solution1();
+            var ans = so.StrStr(haystack, needle);
+            Assert.AreEqual(expected, ans);
         }
     }
 }
