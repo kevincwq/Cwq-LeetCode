@@ -34,9 +34,60 @@ namespace CSharpImpl
     /// </summary>
     public class N0030_SubstringWithConcatenationOfAllWords
     {
-        public class Solution1 {
-            public IList<int> FindSubstring(string s, string[] words) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public IList<int> FindSubstring(string s, string[] words)
+            {
+                var result = new List<int>();
+                if (!string.IsNullOrEmpty(s) && words != null && words.Length > 0)
+                {
+                    var dict = new Dictionary<string, int>();
+                    foreach (var word in words)
+                    {
+                        if (dict.ContainsKey(word))
+                        {
+                            dict[word] = dict[word] + 1;
+                        }
+                        else
+                        {
+                            dict[word] = 1;
+                        }
+                    }
+                    int wordLen = words[0].Length;
+                    int len = s.Length - wordLen * words.Length;
+                    for (int i = 0; i <= len; i++)
+                    {
+                        if (Matches(s, i, wordLen, words.Length, dict))
+                        {
+                            result.Add(i);
+                        }
+                    }
+                }
+                return result;
+            }
+
+            private bool Matches(string s, int index, int wordLen, int leftCount, Dictionary<string, int> dict)
+            {
+                if (index + wordLen > s.Length)
+                {
+                    return false;
+                }
+                var word = s.Substring(index, wordLen);
+                if (dict.ContainsKey(word) && dict[word] > 0)
+                {
+                    if (leftCount == 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        dict[word] = dict[word] - 1;
+                        var ret = Matches(s, index + wordLen, wordLen, leftCount - 1, dict);
+                        dict[word] = dict[word] + 1;
+                        return ret;
+                    }
+                }
+                return false;
             }
         }
     }
