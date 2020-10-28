@@ -38,9 +38,54 @@ namespace CSharpImpl
     /// </summary>
     public class N0029_DivideTwoIntegers
     {
-        public class Solution1 {
-            public int Divide(int dividend, int divisor) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public int Divide(int dividend, int divisor)
+            {
+                // special case that could not use Math.Abs
+                if (divisor == int.MinValue)
+                {
+                    return dividend == int.MinValue ? 1 : 0;
+                }
+
+                bool extra = false;
+                // special case that could not use Math.Abs
+                if (dividend == int.MinValue)
+                {
+                    // overflow return int.MaxValue
+                    if (divisor == -1)
+                        return int.MaxValue;
+
+                    if (divisor > 0)
+                        dividend += divisor;
+                    else
+                        dividend -= divisor;
+
+                    extra = true;
+                }
+
+                var signed = dividend < 0 ^ divisor < 0;
+                dividend = Math.Abs(dividend);
+                divisor = Math.Abs(divisor);
+
+                int quo = 0;
+                for (int i = 31; i >= 0; i--)
+                {
+                    if (dividend >> i >= divisor)
+                    {
+                        quo |= 1 << i;
+                        dividend -= divisor << i;
+                    }
+                }
+
+                if (signed)
+                {
+                    return extra ? -quo - 1 : -quo;
+                }
+                else
+                {
+                    return extra ? quo + 1 : quo;
+                }
             }
         }
     }
