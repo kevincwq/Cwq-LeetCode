@@ -34,9 +34,52 @@ namespace CSharpImpl
     /// </summary>
     public class N0030_SubstringWithConcatenationOfAllWords
     {
-        public class Solution1 {
-            public IList<int> FindSubstring(string s, string[] words) {
-                throw new NotImplementedException();
+        public class Solution2
+        {
+            public int Increment(Dictionary<string, int> dict, string key, int increment = 1)
+            {
+                if (dict.ContainsKey(key))
+                {
+                    var v = dict[key] + increment;
+                    dict[key] = v;
+                    return v;
+                }
+                else
+                {
+                    dict[key] = increment;
+                    return increment;
+                }
+            }
+
+            public IList<int> FindSubstring(string s, string[] words)
+            {
+                var wordsCount = new Dictionary<string, int>();
+                foreach (var word in words)
+                {
+                    Increment(wordsCount, word);
+                }
+
+                int s_len = s.Length, word_len = words[0].Length, words_len = words.Length;
+                var results = new List<int>();
+                for (int i = 0; i < s_len - word_len * words_len + 1; i++)
+                {
+                    var temp = new Dictionary<string, int>();
+                    int j = 0;
+                    while (j < words_len)
+                    {
+                        var word = s.Substring(i + j * word_len, word_len);
+                        if (!wordsCount.ContainsKey(word) || Increment(temp, word) > wordsCount[word])
+                        {
+                            break;
+                        }
+                        j++;
+                    }
+                    if (j == words_len)
+                    {
+                        results.Add(i);
+                    }
+                }
+                return results;
             }
         }
     }
