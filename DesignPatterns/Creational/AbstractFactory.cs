@@ -12,8 +12,14 @@ namespace DesignPatterns.Creational
         /// MainApp startup class for Structural
         /// Abstract Factory Design Pattern.
         /// </summary>
-        public class Structural : IMain
+        public class Structural : IPatternExample
         {
+            public string Name => "Abstract Factory";
+
+            public string Category => "Creational";
+
+            public ExampleTypes ExampleType => ExampleTypes.Structural;
+
             /// <summary>
             /// Entry point into console application.
             /// </summary>
@@ -156,8 +162,14 @@ namespace DesignPatterns.Creational
         /// Abstract Factory Design Pattern.
         /// </summary>
 
-        public class RealWorld : IMain
+        public class RealWorld : IPatternExample
         {
+            public string Name => "Abstract Factory";
+
+            public string Category => "Creational";
+
+            public ExampleTypes ExampleType => ExampleTypes.RealWorld;
+
             /// <summary>
             // Entry point into console application.
             // </summary>

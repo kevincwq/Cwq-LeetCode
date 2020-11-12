@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DesignPatterns.Structural
 {
@@ -10,8 +8,14 @@ namespace DesignPatterns.Structural
     /// </summary>
     public class Adapter
     {
-        public class Structural : IMain
+        public class Structural : IPatternExample
         {
+            public string Name => "Adapter";
+
+            public string Category => "Structural";
+
+            public ExampleTypes ExampleType => ExampleTypes.Structural;
+
             public void Main()
             {
                 // Create adapter and place a request
@@ -57,8 +61,14 @@ namespace DesignPatterns.Structural
             }
         }
 
-        public class RealWorld : IMain
+        public class RealWorld : IPatternExample
         {
+            public string Name => "Adapter";
+
+            public string Category => "Structural";
+
+            public ExampleTypes ExampleType => ExampleTypes.RealWorld;
+
             public void Main()
             {
                 // Non-adapted chemical compound

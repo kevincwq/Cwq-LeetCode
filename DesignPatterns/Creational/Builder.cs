@@ -15,8 +15,13 @@ namespace DesignPatterns.Creational
         /// MainApp startup class for Structural
         /// Builder Design Pattern.
         /// </summary>
-        public class Structural : IMain
+        public class Structural : IPatternExample
         {
+            public string Name => "Builder";
+
+            public string Category => "Creational";
+
+            public ExampleTypes ExampleType => ExampleTypes.Structural;
 
             /// <summary>
             /// Entry point into console application.
@@ -132,8 +137,13 @@ namespace DesignPatterns.Creational
         /// MainApp startup class for Real-World 
         /// Builder Design Pattern.
         /// </summary>
-        public class RealWorld : IMain
+        public class RealWorld : IPatternExample
         {
+            public string Name => "Builder";
+
+            public string Category => "Creational";
+
+            public ExampleTypes ExampleType => ExampleTypes.RealWorld;
 
             /// <summary>
             /// Entry point into console application.

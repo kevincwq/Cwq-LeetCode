@@ -10,8 +10,14 @@ namespace DesignPatterns.Creational
     /// </summary>
     public class Singleton
     {
-        public class Structural : IMain
+        public class Structural : IPatternExample
         {
+            public string Name => "Singleton";
+
+            public string Category => "Creational";
+
+            public ExampleTypes ExampleType => ExampleTypes.Structural;
+
             public void Main()
             {
                 // Constructor is protected -- cannot use new
@@ -51,8 +57,14 @@ namespace DesignPatterns.Creational
             }
         }
 
-        public class RealWorld : IMain
+        public class RealWorld : IPatternExample
         {
+            public string Name => "Singleton";
+
+            public string Category => "Creational";
+
+            public ExampleTypes ExampleType => ExampleTypes.RealWorld;
+
             public void Main()
             {
                 LoadBalancer b1 = LoadBalancer.GetLoadBalancer();

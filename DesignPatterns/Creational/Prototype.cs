@@ -9,8 +9,14 @@ namespace DesignPatterns.Creational
     /// </summary>
     public class Prototype
     {
-        public class Structural : IMain
+        public class Structural : IPatternExample
         {
+            public string Name => "Prototype";
+
+            public string Category => "Creational";
+
+            public ExampleTypes ExampleType => ExampleTypes.Structural;
+
             public void Main()
             {
                 // Create two instances and clone eac
@@ -79,8 +85,14 @@ namespace DesignPatterns.Creational
             }
         }
 
-        public class RealWorld : IMain
+        public class RealWorld : IPatternExample
         {
+            public string Name => "Prototype";
+
+            public string Category => "Creational";
+
+            public ExampleTypes ExampleType => ExampleTypes.RealWorld;
+
             public void Main()
             {
                 ColorManager colormanager = new ColorManager();

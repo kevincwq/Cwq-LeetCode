@@ -9,8 +9,14 @@ namespace DesignPatterns.Creational
     /// </summary>
     public class FactoryMethod
     {
-        public class Structural : IMain
+        public class Structural : IPatternExample
         {
+            public string Name => "Factory Method";
+
+            public string Category => "Creational";
+
+            public ExampleTypes ExampleType => ExampleTypes.Structural;
+
             public void Main()
             {
                 // An array of creators
@@ -89,8 +95,14 @@ namespace DesignPatterns.Creational
             }
         }
 
-        public class RealWorld : IMain
+        public class RealWorld : IPatternExample
         {
+            public string Name => "Factory Method";
+
+            public string Category => "Creational";
+
+            public ExampleTypes ExampleType => ExampleTypes.RealWorld;
+
             public void Main()
             {
                 // Note: constructors call Factory Method
