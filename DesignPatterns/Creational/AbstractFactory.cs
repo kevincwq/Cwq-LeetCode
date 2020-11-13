@@ -14,7 +14,7 @@ namespace DesignPatterns.Creational
         /// </summary>
         public class Structural : IPatternExample
         {
-            public string Name => "Abstract Factory";
+            public string Name => "Abstract Factory - 抽象工厂";
 
             public string Category => "Creational";
 
@@ -164,7 +164,7 @@ namespace DesignPatterns.Creational
 
         public class RealWorld : IPatternExample
         {
-            public string Name => "Abstract Factory";
+            public string Name => "Abstract Factory - 抽象工厂";
 
             public string Category => "Creational";
 

@@ -17,7 +17,7 @@ namespace DesignPatterns.Creational
         /// </summary>
         public class Structural : IPatternExample
         {
-            public string Name => "Builder";
+            public string Name => "Builder - 建造者";
 
             public string Category => "Creational";
 
@@ -139,7 +139,7 @@ namespace DesignPatterns.Creational
         /// </summary>
         public class RealWorld : IPatternExample
         {
-            public string Name => "Builder";
+            public string Name => "Builder - 建造者";
 
             public string Category => "Creational";
 

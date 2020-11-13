@@ -12,7 +12,7 @@ namespace DesignPatterns.Structural
         {
             public string Category => "Structural";
 
-            public string Name => "Facade";
+            public string Name => "Facade - 外观";
 
             public ExampleTypes ExampleType => ExampleTypes.Structural;
 
@@ -107,7 +107,7 @@ namespace DesignPatterns.Structural
         {
             public string Category => "Structural";
 
-            public string Name => "Facade";
+            public string Name => "Facade - 外观";
 
             public ExampleTypes ExampleType => ExampleTypes.RealWorld;
 

@@ -14,7 +14,7 @@ namespace DesignPatterns.Structural
         {
             public string Category => "Structural";
 
-            public string Name => "Proxy";
+            public string Name => "Proxy - 代理";
 
             public ExampleTypes ExampleType => ExampleTypes.Structural;
 
@@ -68,7 +68,7 @@ namespace DesignPatterns.Structural
         {
             public string Category => "Structural";
 
-            public string Name => "Proxy";
+            public string Name => "Proxy - 代理";
 
             public ExampleTypes ExampleType => ExampleTypes.RealWorld;
 

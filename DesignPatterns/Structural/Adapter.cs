@@ -10,7 +10,7 @@ namespace DesignPatterns.Structural
     {
         public class Structural : IPatternExample
         {
-            public string Name => "Adapter";
+            public string Name => "Adapter - 适配器";
 
             public string Category => "Structural";
 
@@ -63,7 +63,7 @@ namespace DesignPatterns.Structural
 
         public class RealWorld : IPatternExample
         {
-            public string Name => "Adapter";
+            public string Name => "Adapter - 适配器";
 
             public string Category => "Structural";
 

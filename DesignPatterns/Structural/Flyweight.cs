@@ -15,7 +15,7 @@ namespace DesignPatterns.Structural
         {
             public string Category => "Structural";
 
-            public string Name => "Flyweight";
+            public string Name => "Flyweight - 享元";
 
             public ExampleTypes ExampleType => ExampleTypes.Structural;
 
@@ -100,7 +100,7 @@ namespace DesignPatterns.Structural
         {
             public string Category => "Structural";
 
-            public string Name => "Flyweight";
+            public string Name => "Flyweight - 享元";
 
             public ExampleTypes ExampleType => ExampleTypes.RealWorld;
 

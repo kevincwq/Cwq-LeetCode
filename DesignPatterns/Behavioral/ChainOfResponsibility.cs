@@ -14,7 +14,7 @@ namespace DesignPatterns.Behavioral
         {
             public string Category => "Behavioral";
 
-            public string Name => "Chain of Responsibility";
+            public string Name => "Chain of Responsibility - 责任链";
 
             public ExampleTypes ExampleType => ExampleTypes.Structural;
 
@@ -109,7 +109,7 @@ namespace DesignPatterns.Behavioral
         {
             public string Category => "Behavioral";
 
-            public string Name => "Chain of Responsibility";
+            public string Name => "Chain of Responsibility - 责任链";
 
             public ExampleTypes ExampleType => ExampleTypes.RealWorld;
 

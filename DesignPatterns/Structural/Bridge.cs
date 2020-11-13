@@ -12,7 +12,7 @@ namespace DesignPatterns.Structural
     {
         public class Structural : IPatternExample
         {
-            public string Name => "Bridge";
+            public string Name => "Bridge - 桥接";
 
             public string Category => "Structural";
 
@@ -93,7 +93,7 @@ namespace DesignPatterns.Structural
 
         public class RealWorld : IPatternExample
         {
-            public string Name => "Bridge";
+            public string Name => "Bridge - 桥接";
 
             public string Category => "Structural";
 

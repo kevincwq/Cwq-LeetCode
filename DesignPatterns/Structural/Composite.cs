@@ -12,7 +12,7 @@ namespace DesignPatterns.Structural
     {
         public class Structural : IPatternExample
         {
-            public string Name => "Composite";
+            public string Name => "Composite - 组合";
 
             public string Category => "Structural";
 
@@ -124,7 +124,7 @@ namespace DesignPatterns.Structural
 
         public class RealWorld : IPatternExample
         {
-            public string Name => "Composite";
+            public string Name => "Composite - 组合";
 
             public string Category => "Structural";
 

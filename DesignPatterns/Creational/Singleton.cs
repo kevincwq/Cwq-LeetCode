@@ -12,7 +12,7 @@ namespace DesignPatterns.Creational
     {
         public class Structural : IPatternExample
         {
-            public string Name => "Singleton";
+            public string Name => "Singleton - 单例";
 
             public string Category => "Creational";
 
@@ -59,7 +59,7 @@ namespace DesignPatterns.Creational
 
         public class RealWorld : IPatternExample
         {
-            public string Name => "Singleton";
+            public string Name => "Singleton - 单例";
 
             public string Category => "Creational";
 
