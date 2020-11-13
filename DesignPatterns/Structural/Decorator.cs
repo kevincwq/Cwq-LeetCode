@@ -10,6 +10,9 @@ namespace DesignPatterns.Structural
     /// </summary>
     public class Decorator
     {
+        /// <summary>
+        /// This structural code demonstrates the Decorator pattern which dynamically adds extra functionality to an existing object.
+        /// </summary>
         public class Structural : IPatternExample
         {
             public string Category => "Structural";
@@ -104,6 +107,9 @@ namespace DesignPatterns.Structural
             }
         }
 
+        /// <summary>
+        /// This real-world code demonstrates the Decorator pattern in which 'borrowable' functionality is added to existing library items (books and videos).
+        /// </summary>
         public class RealWorld : IPatternExample
         {
             public string Category => "Structural";

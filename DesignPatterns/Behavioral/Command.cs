@@ -10,6 +10,9 @@ namespace DesignPatterns.Behavioral
     /// </summary>
     public class Command
     {
+        /// <summary>
+        /// This structural code demonstrates the Command pattern which stores requests as objects allowing clients to execute or playback the requests.
+        /// </summary>
         public class Structural : IPatternExample
         {
             public string Category => "Behavioral";
@@ -93,6 +96,9 @@ namespace DesignPatterns.Behavioral
             }
         }
 
+        /// <summary>
+        /// This real-world code demonstrates the Command pattern used in a simple calculator with unlimited number of undo's and redo's. Note that in C#  the word 'operator' is a keyword. Prefixing it with '@' allows using it as an identifier.
+        /// </summary>
         public class RealWorld : IPatternExample
         {
             public string Category => "Behavioral";

@@ -10,6 +10,9 @@ namespace DesignPatterns.Behavioral
     /// </summary>
     public class Interpreter
     {
+        /// <summary>
+        /// This structural code demonstrates the Interpreter patterns, which using a defined grammer, provides the interpreter that processes parsed statements.
+        /// </summary>
         public class Structural : IPatternExample
         {
             public string Category => "Behavioral";
@@ -77,6 +80,9 @@ namespace DesignPatterns.Behavioral
             }
         }
 
+        /// <summary>
+        /// This real-world code demonstrates the Interpreter pattern which is used to convert a Roman numeral to a decimal.
+        /// </summary>
         public class RealWorld : IPatternExample
         {
             public string Category => "Behavioral";

@@ -11,6 +11,9 @@ namespace DesignPatterns.Structural
     /// </summary>
     public class Flyweight
     {
+        /// <summary>
+        /// This structural code demonstrates the Flyweight pattern in which a relatively small number of objects is shared many times by different clients.
+        /// </summary>
         public class Structural : IPatternExample
         {
             public string Category => "Structural";
@@ -22,13 +25,11 @@ namespace DesignPatterns.Structural
             public void Main()
             {
                 // Arbitrary extrinsic state
-
                 int extrinsicstate = 22;
 
                 FlyweightFactory factory = new FlyweightFactory();
 
                 // Work with different flyweight instances
-
                 Flyweight fx = factory.GetFlyweight("X");
                 fx.Operation(--extrinsicstate);
 
@@ -39,7 +40,6 @@ namespace DesignPatterns.Structural
                 fz.Operation(--extrinsicstate);
 
                 UnsharedConcreteFlyweight fu = new UnsharedConcreteFlyweight();
-
                 fu.Operation(--extrinsicstate);
             }
 
@@ -96,6 +96,9 @@ namespace DesignPatterns.Structural
             }
         }
 
+        /// <summary>
+        /// This real-world code demonstrates the Flyweight pattern in which a relatively small number of Character objects is shared many times by a document that has potentially many characters.
+        /// </summary>
         public class RealWorld : IPatternExample
         {
             public string Category => "Structural";

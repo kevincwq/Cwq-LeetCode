@@ -10,6 +10,9 @@ namespace DesignPatterns.Structural
     /// </summary>
     public class Proxy
     {
+        /// <summary>
+        /// This structural code demonstrates the Proxy pattern which provides a representative object (proxy) that controls access to another similar object.
+        /// </summary>
         public class Structural : IPatternExample
         {
             public string Category => "Structural";
@@ -64,6 +67,9 @@ namespace DesignPatterns.Structural
             }
         }
 
+        /// <summary>
+        /// This real-world code demonstrates the Proxy pattern for a Math object represented by a MathProxy object.
+        /// </summary>
         public class RealWorld : IPatternExample
         {
             public string Category => "Structural";

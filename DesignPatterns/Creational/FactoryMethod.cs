@@ -9,6 +9,9 @@ namespace DesignPatterns.Creational
     /// </summary>
     public class FactoryMethod
     {
+        /// <summary>
+        /// This structural code demonstrates the Factory method offering great flexibility in creating different objects. The Abstract class may provide a default object, but each subclass can instantiate an extended version of the object.
+        /// </summary>
         public class Structural : IPatternExample
         {
             public string Name => "Factory Method - 工厂方法";
@@ -95,6 +98,9 @@ namespace DesignPatterns.Creational
             }
         }
 
+        /// <summary>
+        /// This real-world code demonstrates the Factory method offering flexibility in creating different documents. The derived Document classes Report and Resume instantiate extended versions of the Document class. Here, the Factory Method is called in the constructor of the Document base class.
+        /// </summary>
         public class RealWorld : IPatternExample
         {
             public string Name => "Factory Method - 工厂方法";

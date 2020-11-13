@@ -10,6 +10,9 @@ namespace DesignPatterns.Structural
     /// </summary>
     public class Composite
     {
+        /// <summary>
+        /// This structural code demonstrates the Composite pattern which allows the creation of a tree structure in which individual nodes are accessed uniformly whether they are leaf nodes or branch (composite) nodes.
+        /// </summary>
         public class Structural : IPatternExample
         {
             public string Name => "Composite - 组合";
@@ -122,6 +125,9 @@ namespace DesignPatterns.Structural
             }
         }
 
+        /// <summary>
+        /// This real-world code demonstrates the Composite pattern used in building a graphical tree structure made up of primitive nodes (lines, circles, etc) and composite nodes (groups of drawing elements that make up more complex elements).
+        /// </summary>
         public class RealWorld : IPatternExample
         {
             public string Name => "Composite - 组合";

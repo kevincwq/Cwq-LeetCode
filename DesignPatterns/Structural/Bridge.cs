@@ -10,6 +10,9 @@ namespace DesignPatterns.Structural
     /// </summary>
     public class Bridge
     {
+        /// <summary>
+        /// This structural code demonstrates the Bridge pattern which separates (decouples) the interface from its implementation. The implementation can evolve without changing clients which use the abstraction of the object.
+        /// </summary>
         public class Structural : IPatternExample
         {
             public string Name => "Bridge - 桥接";
@@ -91,6 +94,9 @@ namespace DesignPatterns.Structural
             }
         }
 
+        /// <summary>
+        /// This real-world code demonstrates the Bridge pattern in which a BusinessObject abstraction is decoupled from the implementation in DataObject. The DataObject implementations can evolve dynamically without changing any clients.
+        /// </summary>
         public class RealWorld : IPatternExample
         {
             public string Name => "Bridge - 桥接";

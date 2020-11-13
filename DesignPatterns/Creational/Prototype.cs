@@ -9,6 +9,9 @@ namespace DesignPatterns.Creational
     /// </summary>
     public class Prototype
     {
+        /// <summary>
+        /// This structural code demonstrates the Prototype pattern in which new objects are created by copying pre-existing objects (prototypes) of the same class.
+        /// </summary>
         public class Structural : IPatternExample
         {
             public string Name => "Prototype - 原型";
@@ -85,6 +88,9 @@ namespace DesignPatterns.Creational
             }
         }
 
+        /// <summary>
+        /// This real-world code demonstrates the Prototype pattern in which new Color objects are created by copying pre-existing, user-defined Colors of the same type.
+        /// </summary>
         public class RealWorld : IPatternExample
         {
             public string Name => "Prototype - 原型";

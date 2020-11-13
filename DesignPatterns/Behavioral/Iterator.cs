@@ -11,6 +11,9 @@ namespace DesignPatterns.Behavioral
     /// </summary>
     public class Iterator
     {
+        /// <summary>
+        /// This structural code demonstrates the Iterator pattern which provides for a way to traverse (iterate) over a collection of items without detailing the underlying structure of the collection.
+        /// </summary>
         public class Structural : IPatternExample
         {
             public string Category => "Behavioral";
@@ -130,6 +133,9 @@ namespace DesignPatterns.Behavioral
             }
         }
 
+        /// <summary>
+        /// This real-world code demonstrates the Iterator pattern which is used to iterate over a collection of items and skip a specific number of items each iteration.
+        /// </summary>
         public class RealWorld : IPatternExample
         {
             public string Category => "Behavioral";

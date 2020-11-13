@@ -8,6 +8,9 @@ namespace DesignPatterns.Structural
     /// </summary>
     public class Facade
     {
+        /// <summary>
+        /// This structural code demonstrates the Facade pattern which provides a simplified and uniform interface to a large subsystem of classes.
+        /// </summary>
         public class Structural : IPatternExample
         {
             public string Category => "Structural";
@@ -103,6 +106,9 @@ namespace DesignPatterns.Structural
             }
         }
 
+        /// <summary>
+        /// This real-world code demonstrates the Facade pattern as a MortgageApplication object which provides a simplified interface to a large subsystem of classes measuring the creditworthyness of an applicant.
+        /// </summary>
         public class RealWorld : IPatternExample
         {
             public string Category => "Structural";

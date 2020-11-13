@@ -10,6 +10,9 @@ namespace DesignPatterns.Behavioral
     /// </summary>
     public class ChainOfResponsibility
     {
+        /// <summary>
+        /// This structural code demonstrates the Chain of Responsibility pattern in which several linked objects (the Chain) are offered the opportunity to respond to a request or hand it off to the object next in line.
+        /// </summary>
         public class Structural : IPatternExample
         {
             public string Category => "Behavioral";
@@ -105,6 +108,9 @@ namespace DesignPatterns.Behavioral
             }
         }
 
+        /// <summary>
+        /// This real-world code demonstrates the Chain of Responsibility pattern in which several linked managers and executives can respond to a purchase request or hand it off to a superior. Each position has can have its own set of rules which orders they can approve.
+        /// </summary>
         public class RealWorld : IPatternExample
         {
             public string Category => "Behavioral";

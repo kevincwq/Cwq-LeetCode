@@ -10,10 +10,8 @@ namespace DesignPatterns.Creational
     /// </summary>
     public class Builder
     {
-
         /// <summary>
-        /// MainApp startup class for Structural
-        /// Builder Design Pattern.
+        /// This structural code demonstrates the Builder pattern in which complex objects are created in a step-by-step fashion. The construction process can create different object representations and provides a high level of control over the assembly of the objects.
         /// </summary>
         public class Structural : IPatternExample
         {
@@ -134,8 +132,7 @@ namespace DesignPatterns.Creational
         }
 
         /// <summary>
-        /// MainApp startup class for Real-World 
-        /// Builder Design Pattern.
+        /// This real-world code demonstates the Builder pattern in which different vehicles are assembled in a step-by-step fashion. The Shop uses VehicleBuilders to construct a variety of Vehicles in a series of sequential steps.
         /// </summary>
         public class RealWorld : IPatternExample
         {

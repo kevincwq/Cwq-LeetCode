@@ -8,6 +8,9 @@ namespace DesignPatterns.Structural
     /// </summary>
     public class Adapter
     {
+        /// <summary>
+        /// This structural code demonstrates the Adapter pattern which maps the interface of one class onto another so that they can work together. These incompatible classes may come from different libraries or frameworks.
+        /// </summary>
         public class Structural : IPatternExample
         {
             public string Name => "Adapter - 适配器";
@@ -61,6 +64,9 @@ namespace DesignPatterns.Structural
             }
         }
 
+        /// <summary>
+        /// This real-world code demonstrates the use of a legacy chemical databank. Chemical compound objects access the databank through an Adapter interface.
+        /// </summary>
         public class RealWorld : IPatternExample
         {
             public string Name => "Adapter - 适配器";

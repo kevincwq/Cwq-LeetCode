@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DesignPatterns.Creational
 {
@@ -10,6 +9,9 @@ namespace DesignPatterns.Creational
     /// </summary>
     public class Singleton
     {
+        /// <summary>
+        /// This structural code demonstrates the Singleton pattern which assures only a single instance (the singleton) of the class can be created.
+        /// </summary>
         public class Structural : IPatternExample
         {
             public string Name => "Singleton - 单例";
@@ -57,6 +59,9 @@ namespace DesignPatterns.Creational
             }
         }
 
+        /// <summary>
+        /// This real-world code demonstrates the Singleton pattern as a LoadBalancing object. Only a single instance (the singleton) of the class can be created because servers may dynamically come on- or off-line and every request must go throught the one object that has knowledge about the state of the (web) farm.
+        /// </summary>
         public class RealWorld : IPatternExample
         {
             public string Name => "Singleton - 单例";

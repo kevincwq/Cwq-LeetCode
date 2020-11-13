@@ -9,8 +9,7 @@ namespace DesignPatterns.Creational
     public class AbstractFactory
     {
         /// <summary>
-        /// MainApp startup class for Structural
-        /// Abstract Factory Design Pattern.
+        /// This structural code demonstrates the Abstract Factory pattern creating parallel hierarchies of objects. Object creation has been abstracted and there is no need for hard-coded class names in the client code.
         /// </summary>
         public class Structural : IPatternExample
         {
@@ -26,13 +25,11 @@ namespace DesignPatterns.Creational
             public void Main()
             {
                 // Abstract factory #1
-
                 AbstractFactory factory1 = new ConcreteFactory1();
                 Client client1 = new Client(factory1);
                 client1.Run();
 
                 // Abstract factory #2
-
                 AbstractFactory factory2 = new ConcreteFactory2();
                 Client client2 = new Client(factory2);
                 client2.Run();
@@ -158,10 +155,8 @@ namespace DesignPatterns.Creational
 
 
         /// <summary>
-        /// MainApp startup class for Real-World
-        /// Abstract Factory Design Pattern.
+        /// This real-world code demonstrates the creation of different animal worlds for a computer game using different factories. Although the animals created by the Continent factories are different, the interactions among the animals remain the same.
         /// </summary>
-
         public class RealWorld : IPatternExample
         {
             public string Name => "Abstract Factory - 抽象工厂";
