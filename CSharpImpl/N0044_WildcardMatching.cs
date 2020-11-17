@@ -37,6 +37,10 @@ namespace CSharpImpl
     /// Input: s = "acdcb" p = "a*c?b"
     /// Output: false
     /// 
+    /// Constraints:
+    /// 0 <= s.length, p.length <= 2000
+    /// s contains only lowercase English letters.
+    /// p contains only lowercase English letters, '?' or '*'.
     /// </summary>
     public class N0044_WildcardMatching
     {
