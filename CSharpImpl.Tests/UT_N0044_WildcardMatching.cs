@@ -1,21 +1,34 @@
-using System;
-using System.Collections.Generic;
 using NUnit.Framework;
-using System.Linq;
 
 namespace CSharpImpl.Tests
 {
-    public class UT_N0044_WildcardMatching 
+    public class UT_N0044_WildcardMatching
     {
         static object[] TestCases =
         {
-            new object[]{ new int[] {}, new int[] { } },
+            new object[]{ "", "", true },
+            new object[]{ "", "*", true },
+            new object[]{ "", "*?", false },
+            new object[]{ "", "a", false },
+            new object[]{ "a", "?", true },
+            new object[]{ "a", "a", true },
+            new object[]{ "", "*", true },
+            new object[]{ "a", "", false },
+            new object[]{ "aa", "*", true },
+            new object[]{ "aaa", "a*", true },
+            new object[]{ "aaa", "a*?", true },
+            new object[]{ "aa", "a", false },
+            new object[]{ "cb", "?a", false },
+            new object[]{ "adceb", "*a*b", true },
+            new object[]{ "acdcb", "a*c?b", false },
         };
 
-        // [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int[] input, int[] expected)
+        [TestCaseSource(nameof(TestCases))]
+        public void Solution1(string s, string p, bool expected)
         {
-            throw new NotImplementedException();
+            var so = new N0044_WildcardMatching.Solution1();
+            var ans = so.IsMatch(s, p);
+            Assert.AreEqual(expected, ans);
         }
     }
 }
