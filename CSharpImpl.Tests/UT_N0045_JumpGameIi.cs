@@ -1,21 +1,21 @@
-using System;
-using System.Collections.Generic;
 using NUnit.Framework;
-using System.Linq;
 
 namespace CSharpImpl.Tests
 {
-    public class UT_N0045_JumpGameIi 
+    public class UT_N0045_JumpGameIi
     {
         static object[] TestCases =
         {
-            new object[]{ new int[] {}, new int[] { } },
+            new object[]{ new int[] { 2, 3, 1, 1, 4 }, 2 },
+            new object[]{ new int[] { 2, 3, 1, 1, 4, 2, 1 }, 3 },
         };
 
-        // [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int[] input, int[] expected)
+        [TestCaseSource(nameof(TestCases))]
+        public void Solution1(int[] input, int expected)
         {
-            throw new NotImplementedException();
+            var so = new N0045_JumpGameIi.Solution1();
+            var ans = so.Jump(input);
+            Assert.AreEqual(expected, ans);
         }
     }
 }

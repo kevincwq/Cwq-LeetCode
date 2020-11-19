@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace CSharpImpl
 {
     /// <summary>
@@ -44,9 +41,37 @@ namespace CSharpImpl
     /// </summary>
     public class N0044_WildcardMatching
     {
-        public class Solution1 {
-            public bool IsMatch(string s, string p) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public bool IsMatch(string s, string p)
+            {
+                return Matches(s, 0, p, 0);
+            }
+
+            private bool Matches(string s, int si, string p, int pi)
+            {
+                if (si > s.Length - 1 && pi > p.Length - 1)
+                {
+                    return true;
+                }
+
+                if (pi > p.Length - 1 || (si > s.Length - 1 && p[pi] != '*'))
+                {
+                    return false;
+                }
+
+                if (p[pi] == '?')
+                {
+                    return Matches(s, si + 1, p, pi + 1);
+                }
+                else if (p[pi] == '*')
+                {
+                    return Matches(s, si, p, pi + 1) || (si < s.Length) && Matches(s, si + 1, p, pi);
+                }
+                else
+                {
+                    return p[pi] == s[si] && Matches(s, si + 1, p, pi + 1);
+                }
             }
         }
     }
