@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace CSharpImpl
 {
     /// <summary>
@@ -35,9 +32,33 @@ namespace CSharpImpl
     /// </summary>
     public class N0048_RotateImage
     {
-        public class Solution1 {
-            public void Rotate(int[][] matrix) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public void Rotate(int[][] matrix)
+            {
+                var len = matrix[0].Length;
+                for (int i = 0; i < len - 1; i++)
+                {
+                    for (int j = i; j < len - 1 - i; j++)
+                    {
+                        SwapStart(matrix, i, j, len);
+                    }
+                }
+            }
+
+            private void SwapStart(int[][] matrix, int m, int n, int len)
+            {
+                int j = m, k = n, v = matrix[j][k];
+                do
+                {
+                    var n_j = k;
+                    var n_k = len - 1 - j;
+                    int n_v = matrix[n_j][n_k];
+                    matrix[n_j][n_k] = v;
+                    v = n_v;
+                    j = n_j;
+                    k = n_k;
+                } while (!(j == m && k == n));
             }
         }
     }

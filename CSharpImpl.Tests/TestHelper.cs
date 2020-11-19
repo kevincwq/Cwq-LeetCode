@@ -5,6 +5,11 @@ namespace CSharpImpl.Tests
 {
     class TestHelper
     {
+        public static int[][] Clone(int[][] source)
+        {
+            return source.Select(s => s.ToArray()).ToArray();
+        }
+
         public static bool AreEqual<T>(T[][] A, T[][] B)
         {
             if (A == null && B == null)
