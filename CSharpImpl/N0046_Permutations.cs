@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace CSharpImpl
@@ -14,9 +13,31 @@ namespace CSharpImpl
     /// </summary>
     public class N0046_Permutations
     {
-        public class Solution1 {
-            public IList<IList<int>> Permute(int[] nums) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public IList<IList<int>> Permute(int[] nums)
+            {
+                var result = new List<IList<int>>();
+                if (nums.Length > 0)
+                {
+                    result.Add(new List<int>() { nums[0] });
+                }
+                for (int i = 1; i < nums.Length; i++)
+                {
+                    var count = result.Count;
+                    for (int k = 0; k < count; k++)
+                    {
+                        var item = result[k];
+                        for (int j = item.Count - 1; j >= 0; j--)
+                        {
+                            var newItem = new List<int>(item);
+                            newItem.Insert(j, nums[i]);
+                            result.Add(newItem);
+                        }
+                        item.Add(nums[i]);
+                    }
+                }
+                return result;
             }
         }
     }
