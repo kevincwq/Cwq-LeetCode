@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSharpImpl
 {
@@ -28,9 +28,95 @@ namespace CSharpImpl
     /// </summary>
     public class N0051_NQueens
     {
-        public class Solution1 {
-            public IList<IList<string>> SolveNQueens(int n) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public IList<IList<string>> SolveNQueens(int n)
+            {
+                var results = new List<IList<string>>();
+                var board = NewBoard(n);
+                Place(board, n, 0, ref results);
+                return results;
+            }
+
+            private char[][] NewBoard(int n)
+            {
+                var board = new char[n][];
+                for (int i = 0; i < n; i++)
+                {
+                    board[i] = new char[n];
+                }
+                return board;
+            }
+
+            private char[][] CloneBoard(char[][] board)
+            {
+                return board.Select(v => (char[])v.Clone()).ToArray();
+            }
+
+            private List<string> PrintBoard(char[][] board)
+            {
+                return board.Select(l => new string(l)).ToList();
+            }
+
+            private void FillQCells(char[][] board, int n, int i, int j)
+            {
+                board[i][j] = 'Q';
+                int k = 0;
+                while (k < n)
+                {
+                    if (board[k][j] == default(char))
+                        board[k][j] = '.';
+                    if (board[i][k] == default(char))
+                        board[i][k] = '.';
+                    k++;
+                }
+                k = i; int l = j;
+                while (--k >= 0 && --l >= 0)
+                {
+                    if (board[k][l] == default(char))
+                        board[k][l] = '.';
+                }
+                k = i; l = j;
+                while (--k >= 0 && ++l < n)
+                {
+                    if (board[k][l] == default(char))
+                        board[k][l] = '.';
+                }
+                k = i; l = j;
+                while (++k < n && --l >= 0)
+                {
+                    if (board[k][l] == default(char))
+                        board[k][l] = '.';
+                }
+                k = i; l = j;
+                while (++k < n && ++l < n)
+                {
+                    if (board[k][l] == default(char))
+                        board[k][l] = '.';
+                }
+            }
+
+            /// <summary>
+            /// Place queen at pos
+            /// </summary>
+            private void Place(char[][] board, int n, int q_index, ref List<IList<string>> results)
+            {
+                if (q_index == n)
+                {
+                    results.Add(PrintBoard(board));
+                }
+                else
+                {
+                    for (int i = 0; i < n; i++)
+                    {
+                        if (board[q_index][i] == default(char))
+                        {
+                            var clone = CloneBoard(board);
+                            FillQCells(clone, n, q_index, i);
+                            Place(clone, n, q_index + 1, ref results);
+                        }
+                    }
+                }
             }
         }
     }
