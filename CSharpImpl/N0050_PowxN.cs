@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace CSharpImpl
 {
@@ -30,9 +29,48 @@ namespace CSharpImpl
     /// </summary>
     public class N0050_PowxN
     {
-        public class Solution1 {
-            public double MyPow(double x, int n) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public double MyPow(double x, int n)
+            {
+                if (Math.Abs(x - 0.0d) < double.Epsilon)
+                {
+                    return 0;
+                }
+                else if (Math.Abs(x - 1) < double.Epsilon)
+                {
+                    return 1;
+                }
+                else if (Math.Abs(x + 1) < double.Epsilon)
+                {
+                    return n % 2 == 0 ? 1 : -1;
+                }
+                else
+                {
+                    var v = Pow(x, Math.Abs(n));
+                    return n > 0 ? v : 1 / v;
+                }
+            }
+
+            private double Pow(double x, int n)
+            {
+                if (n == 0)
+                {
+                    return 1;
+                }
+                if (n == 1)
+                {
+                    return x;
+                }
+                else if (n == 2)
+                {
+                    return x * x;
+                }
+                else
+                {
+                    var v = Pow(x, n / 2);
+                    return v * v * Pow(x, n % 2);
+                }
             }
         }
     }

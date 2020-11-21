@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSharpImpl
 {
@@ -30,9 +30,26 @@ namespace CSharpImpl
     /// </summary>
     public class N0049_GroupAnagrams
     {
-        public class Solution1 {
-            public IList<IList<string>> GroupAnagrams(string[] strs) {
-                throw new NotImplementedException();
+        public class Solution1
+        {
+            public IList<IList<string>> GroupAnagrams(string[] strs)
+            {
+                var dict = new Dictionary<string, IList<string>>();
+
+                foreach (var str in strs)
+                {
+                    var key = string.Concat(str.OrderBy(c => c));
+                    if (dict.ContainsKey(key))
+                    {
+                        dict[key].Add(str);
+                    }
+                    else
+                    {
+                        dict.Add(key, new List<string> { str });
+                    }
+                }
+
+                return dict.Values.OrderBy(v => v.Count).ToList();
             }
         }
     }
