@@ -38,8 +38,38 @@ namespace CSharpImpl
     /// </summary>
     public class N0053_MaximumSubarray
     {
-        public class Solution1 {
-            public int MaxSubArray(int[] nums) {
+        public class Solution1
+        {
+            public int MaxSubArray(int[] nums)
+            {
+                //int l = 0, r = nums.Length - 1;
+                //int i = l, j = r, lsum = 0, rsum = 0;
+                //while (i < j)
+                //{
+                //    if (lsum + nums[i] <= 0)
+                //    {
+                //        lsum = 0;
+                //        i++;
+                //        l = i;
+                //    }
+                //    else
+                //    {
+                //        lsum += nums[i];
+                //        i++;
+                //    }
+
+                //    if (rsum + nums[j] <= 0)
+                //    {
+                //        rsum = 0;
+                //        j--;
+                //        r = j;
+                //    }
+                //    else
+                //    {
+                //        rsum += nums[j];
+                //        j--;
+                //    }
+                //}
                 throw new NotImplementedException();
             }
         }

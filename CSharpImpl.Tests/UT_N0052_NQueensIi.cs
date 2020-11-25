@@ -1,21 +1,51 @@
-using System;
-using System.Collections.Generic;
 using NUnit.Framework;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace CSharpImpl.Tests
 {
-    public class UT_N0052_NQueensIi 
+    public class UT_N0052_NQueensIi
     {
         static object[] TestCases =
         {
-            new object[]{ new int[] {}, new int[] { } },
+            new object[]{ 1, new List<IList<string>> { new List<string> { "Q" } } },
+            new object[]{ 2, new List<IList<string>> { } },
+            new object[]{ 3, new List<IList<string>> { } },
+            new object[]{ 4,
+                new List<IList<string>> {
+                    new List<string>{ ".Q..", "...Q", "Q...", "..Q." },
+                    new List<string>{ "..Q.", "Q...", "...Q", ".Q.." }
+                }
+            },
+            new object[]{ 5,
+                new List<IList<string>>{
+                    new List<string>{"Q....","..Q..","....Q",".Q...","...Q."},
+                    new List<string>{"Q....","...Q.",".Q...","....Q","..Q.."},
+                    new List<string>{".Q...","...Q.","Q....","..Q..","....Q"},
+                    new List<string>{".Q...","....Q","..Q..","Q....","...Q."},
+                    new List<string>{"..Q..","Q....","...Q.",".Q...","....Q"},
+                    new List<string>{"..Q..","....Q",".Q...","...Q.","Q...."},
+                    new List<string>{"...Q.","Q....","..Q..","....Q",".Q..."},
+                    new List<string>{"...Q.",".Q...","....Q","..Q..","Q...."},
+                    new List<string>{"....Q",".Q...","...Q.","Q....","..Q.."},
+                    new List<string>{"....Q","..Q..","Q....","...Q.",".Q..."}
+                }
+            },
+            new object[]{ 6,
+                new List<IList<string>>{
+                    new List<string>{".Q....","...Q..",".....Q","Q.....","..Q...","....Q."},
+                    new List<string>{"..Q...",".....Q",".Q....","....Q.","Q.....","...Q.."},
+                    new List<string>{"...Q..","Q.....","....Q.",".Q....",".....Q","..Q..."},
+                    new List<string>{"....Q.","..Q...","Q.....",".....Q","...Q..",".Q...."}
+                }
+            }
         };
 
-        // [TestCaseSource(nameof(TestCases))]
-        public void Solution1(int[] input, int[] expected)
+        [TestCaseSource(nameof(TestCases))]
+        public void Solution1(int input, IList<IList<string>> expected)
         {
-            throw new NotImplementedException();
+            var so = new N0052_NQueensIi.Solution1();
+            var ans = so.TotalNQueens(input);
+            Assert.AreEqual(expected.Count, ans);
         }
     }
 }
