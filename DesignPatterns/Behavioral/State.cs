@@ -157,8 +157,6 @@ namespace DesignPatterns.Behavioral
             /// </summary>
             class RedState : State
             {
-                private double _serviceFee;
-
                 // Constructor
                 public RedState(State state)
                 {
@@ -173,7 +171,6 @@ namespace DesignPatterns.Behavioral
                     interest = 0.0;
                     lowerLimit = -100.0;
                     upperLimit = 0.0;
-                    _serviceFee = 15.00;
                 }
 
                 public override void Deposit(double amount)
@@ -184,7 +181,6 @@ namespace DesignPatterns.Behavioral
 
                 public override void Withdraw(double amount)
                 {
-                    // amount = amount - _serviceFee;
                     Console.WriteLine("No funds available for withdrawal!");
                 }
 
